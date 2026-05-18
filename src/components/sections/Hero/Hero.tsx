@@ -36,11 +36,11 @@ export function Hero({
       <div className={styles.heroContent}>
         <span className={styles.eyebrow}>{eyebrow}</span>
         <h1 className={styles.headline}>
-          {headlineLead}{" "}
-          <span className={styles.amp}>{headlineAccent}</span>{" "}
+          {headlineLead} <span className={styles.amp}>{headlineAccent}</span>{" "}
           <em className={styles.headlineSuffix}>{headlineSuffix}</em>
         </h1>
         <p className={styles.subtitle}>{subtitle}</p>
+        <p>I am a test</p>
 
         <Countdown targetDate={eventDate} />
 
