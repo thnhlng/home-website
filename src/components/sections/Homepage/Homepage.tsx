@@ -2,6 +2,8 @@ import { Hero } from "@/components/sections/Hero";
 import { Invitation } from "@/components/sections/Invitation";
 import { Details } from "@/components/sections/Details";
 import { Schedule } from "@/components/sections/Schedule";
+import { Menu } from "@/components/sections/Menu";
+import { RSVP } from "@/components/sections/RSVP";
 
 const heroProps = {
   eyebrow: "An Intimate Gathering · October 17, 2026",
@@ -147,6 +149,125 @@ const scheduleProps = {
   ],
 };
 
+const menuProps = {
+  eyebrow: "At The Table",
+  headlineLead: "Dinner, slowly,",
+  headlineAccent: "together",
+  columns: [
+    {
+      title: "To Begin",
+      items: [
+        {
+          name: "Burrata & roasted figs",
+          desc: "Honey, thyme, sourdough crostini.",
+          tag: "V",
+        },
+        {
+          name: "Smoked beet carpaccio",
+          desc: "Walnut, orange zest, soft goat cheese.",
+          tag: "V · GF",
+        },
+        {
+          name: "Warm olives & marcona almonds",
+          desc: "Rosemary, sea salt, lemon peel.",
+          tag: "VG · GF",
+        },
+      ],
+    },
+    {
+      title: "The Main Course",
+      items: [
+        {
+          name: "Slow-braised short rib",
+          desc: "Red wine reduction, soft polenta, gremolata.",
+          tag: "GF",
+        },
+        {
+          name: "Saffron & lemon risotto",
+          desc: "Parmigiano, charred leeks, brown butter.",
+          tag: "V · GF",
+        },
+        {
+          name: "Roasted heirloom carrots",
+          desc: "Tahini, dukkah, pomegranate.",
+          tag: "VG · GF",
+        },
+      ],
+    },
+    {
+      title: "Something Sweet",
+      items: [
+        {
+          name: "Olive oil cake",
+          desc: "Citrus glaze, candied rosemary.",
+          tag: "V",
+        },
+        {
+          name: "Dark chocolate & sea salt",
+          desc: "70% Valrhona, flaked Maldon.",
+          tag: "VG · GF",
+        },
+        {
+          name: "Espresso, mint tea, digestifs",
+          desc: "Take your pick — we’ll be up a while.",
+        },
+      ],
+    },
+    {
+      title: "To Pour",
+      items: [
+        {
+          name: "Champagne welcome",
+          desc: "Blanc de blancs, very cold.",
+        },
+        {
+          name: "Red — Sangiovese, Tuscany",
+          desc: "Earthy, easy, made for short rib.",
+        },
+        {
+          name: "White — Albariño, Rías Baixas",
+          desc: "Bright, salty, made for risotto.",
+        },
+        {
+          name: "Zero-proof",
+          desc: "Pomegranate spritz, ginger-honey fizz, herbal infusions.",
+        },
+      ],
+    },
+  ],
+  allergyNote:
+    "A note on allergies — tell me on your RSVP and I’ll quietly take care of it. There will always be something gorgeous for you to eat.",
+  allergyFootnote:
+    "If you have a favourite bottle or a treasured family snack — bring it. Not required, always welcomed.",
+};
+
+const rsvpProps = {
+  eyebrow: "Kindly Reply",
+  headlineLead: "Tell me you’re",
+  headlineAccent: "coming",
+  headlineSuffix: ".",
+  intro: (
+    <>
+      I promise this is the only form you’ll have to fill in. RSVPs by{" "}
+      <strong>October 3</strong>, please — so I can plan the table and the
+      playlist.
+    </>
+  ),
+  directLine: {
+    label: "Direct Line",
+    lines: [
+      <>text Quyen · +1 347 555 0184</>,
+      <>quyen@thereunion.club</>,
+    ],
+  },
+  thanksHeadlineLead: "I knew it.",
+  thanksHeadlineAccent: "I’m so glad.",
+  thanksMessage:
+    "You’ll get a little note from me a few days before. Until then — start thinking of your story.",
+  submitLabel: "Send my reply",
+  editLabel: "Edit my reply",
+};
+
 export function Homepage() {
   return (
     <main>
@@ -154,6 +275,8 @@ export function Homepage() {
       <Invitation {...invitationProps} />
       <Details {...detailsProps} />
       <Schedule {...scheduleProps} />
+      <Menu {...menuProps} />
+      <RSVP {...rsvpProps} />
     </main>
   );
 }

@@ -1,0 +1,321 @@
+@use "@/styles/variables" as v;
+
+.section {
+  padding: v.$section-y v.$pad-x;
+  background: v.$color-cream;
+}
+
+.wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: start;
+
+  @media (min-width: v.$breakpoint-lg) {
+    grid-template-columns: 4fr 6fr;
+    gap: 72px;
+  }
+}
+
+// ---------- Side copy ----------
+.side {
+  display: flex;
+  flex-direction: column;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-family: v.$font-caps;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: v.$color-burgundy;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 28px;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.5;
+  }
+}
+
+.headline {
+  margin: 18px 0 24px;
+  font-family: v.$font-display;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  font-size: clamp(40px, 4.6vw, 56px);
+  color: v.$color-ink;
+}
+
+.accent {
+  font-style: italic;
+  color: v.$color-burgundy;
+}
+
+.intro {
+  font-family: v.$font-display;
+  font-style: italic;
+  color: v.$color-ink-soft;
+  font-size: 19px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.directLine {
+  margin-top: 32px;
+  font-size: 14px;
+  color: v.$color-taupe;
+  letter-spacing: 0.04em;
+}
+
+.directLabel {
+  display: block;
+  margin-bottom: 6px;
+  font-family: v.$font-caps;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: v.$color-taupe;
+}
+
+.directLineRow {
+  margin: 0;
+  line-height: 1.6;
+}
+
+// ---------- Form ----------
+.form {
+  background: v.$color-cream;
+  padding: 32px 24px;
+  border: 1px solid v.$color-rule;
+  border-radius: 4px;
+
+  @media (min-width: v.$breakpoint-md) {
+    padding: 48px;
+  }
+}
+
+.field {
+  margin-bottom: 26px;
+  border: none;
+  padding: 0;
+}
+
+.label {
+  display: block;
+  margin: 0 0 10px;
+  font-family: v.$font-caps;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: 10px;
+  color: v.$color-taupe;
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid v.$color-rule;
+  background: transparent;
+  font-family: v.$font-display;
+  font-size: 20px;
+  padding: 8px 0 12px;
+  color: v.$color-ink;
+  transition: border-color 0.25s ease;
+}
+
+.form input:focus,
+.form textarea:focus {
+  outline: none;
+  border-bottom-color: v.$color-burgundy;
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+  color: v.$color-taupe;
+  opacity: 0.6;
+  font-style: italic;
+}
+
+.form textarea {
+  resize: vertical;
+  min-height: 80px;
+  font-family: v.$font-display;
+}
+
+.fieldError {
+  margin: 8px 0 0;
+  font-size: 13px;
+  font-family: v.$font-body;
+  color: v.$color-burgundy;
+}
+
+.formError {
+  margin: 0 0 16px;
+  font-size: 14px;
+  color: v.$color-burgundy;
+}
+
+// ---------- Radio chips ----------
+.radioRow {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  flex: 1;
+  min-width: 100px;
+  padding: 14px 18px;
+  border: 1px solid v.$color-rule;
+  border-radius: 999px;
+  text-align: center;
+  cursor: pointer;
+  font-family: v.$font-display;
+  font-size: 17px;
+  background: transparent;
+  color: v.$color-ink;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+
+  &:hover {
+    border-color: v.$color-taupe;
+  }
+
+  &:focus-within {
+    outline: 2px solid v.$color-burgundy;
+    outline-offset: 2px;
+  }
+}
+
+.chipInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.chipEm {
+  font-style: italic;
+  margin-right: 6px;
+  color: v.$color-gold;
+}
+
+.chipActive {
+  background: v.$color-burgundy;
+  color: v.$color-cream;
+  border-color: v.$color-burgundy;
+
+  .chipEm {
+    color: v.$color-gold-soft;
+  }
+}
+
+// ---------- Buttons ----------
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  font-family: v.$font-caps;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    gap 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.btnPrimary {
+  background: v.$color-burgundy;
+  color: v.$color-cream;
+
+  &:hover:not(:disabled) {
+    background: v.$color-burgundy-deep;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px -10px rgba(47, 74, 53, 0.6);
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+.btnGhost {
+  background: transparent;
+  color: v.$color-burgundy;
+  padding: 10px 0;
+
+  &:hover {
+    color: v.$color-burgundy-deep;
+    gap: 14px;
+  }
+}
+
+.btnSubmit {
+  margin-top: 12px;
+  width: 100%;
+  justify-content: center;
+}
+
+.arrow {
+  font-family: v.$font-display;
+  font-style: italic;
+}
+
+// ---------- Thanks card ----------
+.thanks {
+  text-align: center;
+  padding: 24px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.thanksHeadline {
+  margin: 4px 0 0;
+  font-family: v.$font-display;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1.2;
+  color: v.$color-burgundy;
+}
+
+.thanksAccent {
+  font-style: italic;
+}
+
+.thanksMessage {
+  margin: 0;
+  font-family: v.$font-display;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.5;
+  color: v.$color-ink-soft;
+}
