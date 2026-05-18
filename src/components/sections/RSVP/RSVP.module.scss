@@ -119,6 +119,17 @@
   color: v.$color-taupe;
 }
 
+.labelHint {
+  font-family: v.$font-display;
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 12px;
+  color: v.$color-taupe;
+  margin-left: 6px;
+  opacity: 0.8;
+}
+
 .form input[type="text"],
 .form input[type="email"],
 .form textarea {
@@ -165,8 +176,9 @@
   color: v.$color-burgundy;
 }
 
-// ---------- Radio chips ----------
-.radioRow {
+// ---------- Chip rows (radio + checkbox) ----------
+.radioRow,
+.chipsRow {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;

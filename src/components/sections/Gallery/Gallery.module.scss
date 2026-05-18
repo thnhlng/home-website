@@ -1,0 +1,103 @@
+@use "@/styles/variables" as v;
+
+.section {
+  padding: v.$section-y v.$pad-x;
+  background: v.$color-cream-deep;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+
+  @media (min-width: v.$breakpoint-md) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.item {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  margin: 0;
+  overflow: hidden;
+  background: v.$color-cream;
+  transition: transform 0.4s ease;
+}
+
+.itemWide {
+  grid-column: span 2;
+  aspect-ratio: 2 / 1;
+}
+
+.itemTall {
+  // Mobile: behave like a regular square item
+  aspect-ratio: 1;
+
+  @media (min-width: v.$breakpoint-md) {
+    aspect-ratio: 3 / 4;
+    grid-row: span 2;
+  }
+}
+
+.itemImg {
+  object-fit: cover;
+}
+
+.placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  text-align: center;
+  font-family: v.$font-display;
+  font-style: italic;
+  font-size: 14px;
+  color: v.$color-taupe;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      transparent 0 10px,
+      v.$color-rule 10px 11px
+    ),
+    v.$color-cream;
+}
+
+.locked {
+  margin-top: 56px;
+  padding: 40px;
+  text-align: center;
+  border: 1px dashed v.$color-rule;
+  border-radius: 4px;
+}
+
+.lockedText {
+  margin: 0 0 18px;
+  font-family: v.$font-display;
+  font-style: italic;
+  font-size: 20px;
+  color: v.$color-ink-soft;
+}
+
+.lockedCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  font-family: v.$font-caps;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  background: transparent;
+  color: v.$color-ink;
+  border: 1px solid v.$color-ink-soft;
+  border-radius: 999px;
+  opacity: 0.5;
+  cursor: not-allowed;
+}

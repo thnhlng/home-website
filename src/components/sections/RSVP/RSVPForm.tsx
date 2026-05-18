@@ -7,8 +7,11 @@ import { Fleuron } from "@/components/ui/Fleuron";
 import { submitRsvp } from "@/lib/actions/rsvp";
 import {
   rsvpSchema,
+  PROTEIN_VALUES,
   type RsvpInput,
 } from "@/lib/actions/rsvpSchema";
+
+type ProteinValue = (typeof PROTEIN_VALUES)[number];
 import styles from "./RSVP.module.scss";
 
 type AttendingOption = {
@@ -21,6 +24,18 @@ const ATTENDING_OPTIONS: AttendingOption[] = [
   { value: "yes", numeral: "i.", label: "Yes, of course" },
   { value: "maybe", numeral: "ii.", label: "Trying my best" },
   { value: "no", numeral: "iii.", label: "Can’t this time" },
+];
+
+type ProteinOption = {
+  value: ProteinValue;
+  label: string;
+};
+
+const PROTEIN_OPTIONS: ProteinOption[] = [
+  { value: "pork", label: "Pork" },
+  { value: "beef", label: "Beef" },
+  { value: "chicken", label: "Chicken" },
+  { value: "shrimp", label: "Shrimp" },
 ];
 
 type Props = {
@@ -49,6 +64,7 @@ export function RSVPForm({
     defaultValues: {
       name: "",
       attending: "yes",
+      proteins: [],
       diet: "",
       song: "",
       message: "",
@@ -60,6 +76,7 @@ export function RSVPForm({
   const [isPending, startTransition] = useTransition();
 
   const attending = useWatch({ control, name: "attending" });
+  const proteins = useWatch({ control, name: "proteins" }) ?? [];
 
   const onSubmit = handleSubmit((data) => {
     setFormError(null);
@@ -145,6 +162,37 @@ export function RSVPForm({
         </div>
         {errors.attending && (
           <p className={styles.fieldError}>{errors.attending.message}</p>
+        )}
+      </fieldset>
+
+      <fieldset className={styles.field}>
+        <legend className={styles.label}>
+          What you’d like to eat{" "}
+          <span className={styles.labelHint}>(pick any)</span>
+        </legend>
+        <div className={styles.chipsRow}>
+          {PROTEIN_OPTIONS.map((opt) => {
+            const active = proteins.includes(opt.value);
+            return (
+              <label
+                key={opt.value}
+                className={
+                  active ? `${styles.chip} ${styles.chipActive}` : styles.chip
+                }
+              >
+                <input
+                  type="checkbox"
+                  value={opt.value}
+                  className={styles.chipInput}
+                  {...register("proteins")}
+                />
+                {opt.label}
+              </label>
+            );
+          })}
+        </div>
+        {errors.proteins && (
+          <p className={styles.fieldError}>{errors.proteins.message}</p>
         )}
       </fieldset>
 

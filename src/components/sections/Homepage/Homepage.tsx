@@ -5,6 +5,7 @@ import { Details } from "@/components/sections/Details";
 import { Schedule } from "@/components/sections/Schedule";
 import { Menu } from "@/components/sections/Menu";
 import { RSVP } from "@/components/sections/RSVP";
+import { Gallery } from "@/components/sections/Gallery";
 import { Footer, HeartDot } from "@/components/sections/Footer";
 
 const topBarProps = {
@@ -301,6 +302,32 @@ const rsvpProps = {
   editLabel: "Edit my reply",
 };
 
+const galleryProps = {
+  eyebrow: "After The Night",
+  headlineLead: "The Sunday Morning",
+  headlineAccent: "gallery",
+  lede:
+    "This space will fill itself with the photos we took. Check back the morning after — and download anything you’d like to keep forever.",
+  items: [
+    { alt: "The arrival", placeholder: "The arrival", size: "tall" as const },
+    { alt: "The table", placeholder: "The table" },
+    { alt: "The toast", placeholder: "The toast" },
+    {
+      alt: "The whole group, finally",
+      placeholder: "The whole group, finally",
+      size: "wide" as const,
+    },
+    { alt: "Mid-laugh", placeholder: "Mid-laugh" },
+    { alt: "The candles", placeholder: "The candles" },
+    { alt: "The dance floor", placeholder: "The dance floor" },
+    { alt: "The very last one", placeholder: "The very last one" },
+  ],
+  locked: {
+    message: "The full gallery unlocks on October 18 at noon.",
+    ctaLabel: "Download all photos",
+  },
+};
+
 export function Homepage() {
   return (
     <>
@@ -312,6 +339,7 @@ export function Homepage() {
         <Schedule {...scheduleProps} />
         <Menu {...menuProps} />
         <RSVP {...rsvpProps} />
+        <Gallery {...galleryProps} />
       </main>
       <Footer {...footerProps} />
     </>
