@@ -1,0 +1,61 @@
+@use "@/styles/variables" as v;
+
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px v.$pad-x;
+  background: linear-gradient(
+    to bottom,
+    rgba(244, 241, 232, 0.92),
+    rgba(244, 241, 232, 0)
+  );
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition:
+    background 0.4s ease,
+    padding 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.scrolled {
+  background: rgba(244, 241, 232, 0.94);
+  padding-top: 14px;
+  padding-bottom: 14px;
+  box-shadow: 0 1px 0 v.$color-rule;
+}
+
+.mark {
+  font-family: v.$font-display;
+  font-style: italic;
+  font-size: 22px;
+  letter-spacing: 0.02em;
+  color: v.$color-burgundy;
+}
+
+.nav {
+  display: none;
+  gap: 32px;
+  font-family: v.$font-caps;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+
+  @media (min-width: v.$breakpoint-lg) {
+    display: flex;
+  }
+}
+
+.navLink {
+  color: v.$color-ink-soft;
+  transition: color 0.25s ease;
+
+  &:hover {
+    color: v.$color-burgundy;
+  }
+}

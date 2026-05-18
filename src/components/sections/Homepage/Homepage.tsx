@@ -1,9 +1,42 @@
+import { TopBar } from "@/components/sections/TopBar";
 import { Hero } from "@/components/sections/Hero";
 import { Invitation } from "@/components/sections/Invitation";
 import { Details } from "@/components/sections/Details";
 import { Schedule } from "@/components/sections/Schedule";
 import { Menu } from "@/components/sections/Menu";
 import { RSVP } from "@/components/sections/RSVP";
+import { Footer, HeartDot } from "@/components/sections/Footer";
+
+const topBarProps = {
+  mark: "Girls Reunion · 2026",
+  links: [
+    { label: "Invitation", href: "#invitation" },
+    { label: "Details", href: "#details" },
+    { label: "Evening", href: "#schedule" },
+    { label: "Menu", href: "#menu" },
+    { label: "RSVP", href: "#rsvp" },
+  ],
+};
+
+const footerProps = {
+  pill: "A private page · for the six of us",
+  headline: (
+    <>
+      Thank you for being
+      <br />
+      the people I’d pick again, <em>every time.</em>
+    </>
+  ),
+  message:
+    "This page is a quiet little corner of the internet, just for us. Don’t share the link — and bring your softest self on the seventeenth.",
+  meta: [
+    "Girls Reunion · MMXXVI",
+    <>
+      Made <HeartDot /> with love, by your host
+    </>,
+    "quyen@thereunion.club",
+  ],
+};
 
 const heroProps = {
   eyebrow: "An Intimate Gathering · October 17, 2026",
@@ -270,13 +303,17 @@ const rsvpProps = {
 
 export function Homepage() {
   return (
-    <main>
-      <Hero {...heroProps} />
-      <Invitation {...invitationProps} />
-      <Details {...detailsProps} />
-      <Schedule {...scheduleProps} />
-      <Menu {...menuProps} />
-      <RSVP {...rsvpProps} />
-    </main>
+    <>
+      <TopBar {...topBarProps} />
+      <main>
+        <Hero {...heroProps} />
+        <Invitation {...invitationProps} />
+        <Details {...detailsProps} />
+        <Schedule {...scheduleProps} />
+        <Menu {...menuProps} />
+        <RSVP {...rsvpProps} />
+      </main>
+      <Footer {...footerProps} />
+    </>
   );
 }
