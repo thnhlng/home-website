@@ -1,4 +1,5 @@
 import { SectionHead } from "@/components/ui/SectionHead";
+import { Reveal } from "@/components/ui/Reveal";
 import styles from "./Schedule.module.scss";
 
 type ScheduleItem = {
@@ -24,31 +25,35 @@ export function Schedule({
   return (
     <section className={styles.section} id="schedule">
       <div className={styles.container}>
-        <SectionHead
-          eyebrow={eyebrow}
-          headlineLead={headlineLead}
-          headlineAccent={headlineAccent}
-        />
+        <Reveal>
+          <SectionHead
+            eyebrow={eyebrow}
+            headlineLead={headlineLead}
+            headlineAccent={headlineAccent}
+          />
+        </Reveal>
 
-        <ol className={styles.timeline}>
-          {items.map((item) => (
-            <li
-              key={item.time}
-              className={
-                item.highlight
-                  ? `${styles.item} ${styles.highlight}`
-                  : styles.item
-              }
-            >
-              <span className={styles.time}>{item.time}</span>
-              <span className={styles.dot} aria-hidden="true" />
-              <div className={styles.body}>
-                <h3 className={styles.title}>{item.title}</h3>
-                <p className={styles.note}>{item.note}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
+        <Reveal delay={120}>
+          <ol className={styles.timeline}>
+            {items.map((item) => (
+              <li
+                key={item.time}
+                className={
+                  item.highlight
+                    ? `${styles.item} ${styles.highlight}`
+                    : styles.item
+                }
+              >
+                <span className={styles.time}>{item.time}</span>
+                <span className={styles.dot} aria-hidden="true" />
+                <div className={styles.body}>
+                  <h3 className={styles.title}>{item.title}</h3>
+                  <p className={styles.note}>{item.note}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </Reveal>
       </div>
     </section>
   );

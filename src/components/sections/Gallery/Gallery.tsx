@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { SectionHead } from "@/components/ui/SectionHead";
+import { Reveal } from "@/components/ui/Reveal";
 import styles from "./Gallery.module.scss";
 
 type GallerySize = "regular" | "tall" | "wide";
@@ -42,46 +43,52 @@ export function Gallery({
   return (
     <section className={styles.section} id="gallery">
       <div className={styles.container}>
-        <SectionHead
-          eyebrow={eyebrow}
-          headlineLead={headlineLead}
-          headlineAccent={headlineAccent}
-          lede={lede}
-        />
+        <Reveal>
+          <SectionHead
+            eyebrow={eyebrow}
+            headlineLead={headlineLead}
+            headlineAccent={headlineAccent}
+            lede={lede}
+          />
+        </Reveal>
 
-        <div className={styles.grid}>
-          {items.map((item, i) => {
-            const sized = sizeClass(item.size);
-            const className = sized
-              ? `${styles.item} ${sized}`
-              : styles.item;
-            return (
-              <figure key={i} className={className}>
-                {item.src ? (
-                  <Image
-                    src={item.src}
-                    alt={item.alt}
-                    fill
-                    sizes="(min-width: 768px) 25vw, 50vw"
-                    className={styles.itemImg}
-                  />
-                ) : (
-                  <span className={styles.placeholder} aria-hidden="true">
-                    {item.placeholder ?? item.alt}
-                  </span>
-                )}
-              </figure>
-            );
-          })}
-        </div>
+        <Reveal delay={120}>
+          <div className={styles.grid}>
+            {items.map((item, i) => {
+              const sized = sizeClass(item.size);
+              const className = sized
+                ? `${styles.item} ${sized}`
+                : styles.item;
+              return (
+                <figure key={i} className={className}>
+                  {item.src ? (
+                    <Image
+                      src={item.src}
+                      alt={item.alt}
+                      fill
+                      sizes="(min-width: 768px) 25vw, 50vw"
+                      className={styles.itemImg}
+                    />
+                  ) : (
+                    <span className={styles.placeholder} aria-hidden="true">
+                      {item.placeholder ?? item.alt}
+                    </span>
+                  )}
+                </figure>
+              );
+            })}
+          </div>
+        </Reveal>
 
         {locked && (
-          <aside className={styles.locked}>
-            <p className={styles.lockedText}>{locked.message}</p>
-            <button type="button" className={styles.lockedCta} disabled>
-              {locked.ctaLabel}
-            </button>
-          </aside>
+          <Reveal delay={200}>
+            <aside className={styles.locked}>
+              <p className={styles.lockedText}>{locked.message}</p>
+              <button type="button" className={styles.lockedCta} disabled>
+                {locked.ctaLabel}
+              </button>
+            </aside>
+          </Reveal>
         )}
       </div>
     </section>
