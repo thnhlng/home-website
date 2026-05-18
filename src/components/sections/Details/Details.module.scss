@@ -1,0 +1,110 @@
+@use "@/styles/variables" as v;
+
+.section {
+  padding: v.$section-y v.$pad-x;
+  background: v.$color-cream;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 22px;
+  margin-bottom: 64px;
+}
+
+.caps {
+  font-family: v.$font-caps;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: v.$color-taupe;
+}
+
+.headline {
+  margin: 0;
+  font-family: v.$font-display;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  font-size: clamp(40px, 5vw, 64px);
+  color: v.$color-ink;
+}
+
+.accent {
+  font-style: italic;
+  color: v.$color-burgundy;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: v.$color-rule;
+  border: 1px solid v.$color-rule;
+
+  @media (min-width: v.$breakpoint-md) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: v.$breakpoint-lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background: v.$color-cream;
+  padding: 40px 36px;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: v.$color-cream-deep;
+  }
+}
+
+.num {
+  font-family: v.$font-display;
+  font-style: italic;
+  font-size: 22px;
+  color: v.$color-gold;
+}
+
+.label {
+  margin: 0;
+  font-family: v.$font-caps;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 400;
+  color: v.$color-taupe;
+}
+
+.primary {
+  margin: 0;
+  font-family: v.$font-display;
+  font-size: 24px;
+  line-height: 1.4;
+  color: v.$color-ink;
+
+  em {
+    font-style: italic;
+    color: v.$color-burgundy;
+  }
+}
+
+.sub {
+  margin: 0;
+  font-size: 14px;
+  color: v.$color-ink-soft;
+}

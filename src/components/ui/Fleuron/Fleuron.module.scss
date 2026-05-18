@@ -1,0 +1,24 @@
+@use "@/styles/variables" as v;
+
+.fleuron {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  color: v.$color-gold;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    width: 36px;
+    height: 1px;
+    background: currentColor;
+  }
+}
+
+.diamond {
+  width: 5px;
+  height: 5px;
+  background: currentColor;
+  transform: rotate(45deg);
+}
