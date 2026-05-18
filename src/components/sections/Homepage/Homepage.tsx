@@ -16,6 +16,7 @@ const topBarProps = {
     { label: "Evening", href: "#schedule" },
     { label: "Menu", href: "#menu" },
     { label: "RSVP", href: "#rsvp" },
+    { label: "Gallery", href: "#gallery" },
   ],
 };
 
