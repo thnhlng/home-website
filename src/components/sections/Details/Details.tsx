@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Fleuron } from "@/components/ui/Fleuron";
+import { SectionHead } from "@/components/ui/SectionHead";
 import styles from "./Details.module.scss";
 
 type DetailItem = {
@@ -25,13 +25,11 @@ export function Details({
   return (
     <section className={styles.section} id="details">
       <div className={styles.container}>
-        <header className={styles.head}>
-          <Fleuron />
-          <span className={styles.caps}>{eyebrow}</span>
-          <h2 className={styles.headline}>
-            {headlineLead} <em className={styles.accent}>{headlineAccent}</em>
-          </h2>
-        </header>
+        <SectionHead
+          eyebrow={eyebrow}
+          headlineLead={headlineLead}
+          headlineAccent={headlineAccent}
+        />
 
         <div className={styles.grid}>
           {items.map((item) => (

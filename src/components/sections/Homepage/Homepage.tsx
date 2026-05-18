@@ -1,6 +1,7 @@
 import { Hero } from "@/components/sections/Hero";
 import { Invitation } from "@/components/sections/Invitation";
 import { Details } from "@/components/sections/Details";
+import { Schedule } from "@/components/sections/Schedule";
 
 const heroProps = {
   eyebrow: "An Intimate Gathering · October 17, 2026",
@@ -112,12 +113,47 @@ const detailsProps = {
   ],
 };
 
+const scheduleProps = {
+  eyebrow: "The Evening",
+  headlineLead: "A loose plan,",
+  headlineAccent: "followed loosely",
+  items: [
+    {
+      time: "7:00",
+      title: "Welcome drinks",
+      note: "Sparkling wine, pomegranate spritz, something warm if it’s cold.",
+      highlight: true,
+    },
+    {
+      time: "8:00",
+      title: "Dinner at the long table",
+      note: "Slow, candle-lit, no phones unless they’re playing music.",
+    },
+    {
+      time: "9:30",
+      title: "Memory-sharing moment",
+      note: "One story each — pick the one we’d never let you live down.",
+    },
+    {
+      time: "10:30",
+      title: "The infamous quiz",
+      note: "How well do you really know us? Prepare to be roasted.",
+    },
+    {
+      time: "11:30",
+      title: "Music, photos & talking ’til late",
+      note: "Dance floor optional. Whispered confessions encouraged.",
+    },
+  ],
+};
+
 export function Homepage() {
   return (
     <main>
       <Hero {...heroProps} />
       <Invitation {...invitationProps} />
       <Details {...detailsProps} />
+      <Schedule {...scheduleProps} />
     </main>
   );
 }
