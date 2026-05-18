@@ -1,0 +1,28 @@
+// Colors — sage palette
+$color-cream:         #F4F1E8;
+$color-cream-deep:    #E6E4D0;
+$color-blush:         #C8D4B8;
+$color-blush-soft:    #D9E2CC;
+$color-burgundy:      #2F4A35;
+$color-burgundy-deep: #1F3324;
+$color-gold:          #A89569;
+$color-gold-soft:     #C9B58A;
+$color-taupe:         #6F7A60;
+$color-ink:           #1E2A1F;
+$color-ink-soft:      #48553F;
+$color-rule:          rgba(30, 42, 31, 0.14);
+
+// Fonts — wired to next/font CSS variables set on <html>
+$font-display: var(--font-display), "EB Garamond", Georgia, serif;
+$font-body:    var(--font-body), system-ui, -apple-system, sans-serif;
+$font-caps:    var(--font-caps), "Cormorant Garamond", serif;
+
+// Spacing — fluid tokens
+$pad-x:     clamp(20px, 5vw, 88px);
+$section-y: clamp(80px, 11vw, 160px);
+
+// Breakpoints
+$breakpoint-sm: 480px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
