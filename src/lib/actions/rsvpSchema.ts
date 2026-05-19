@@ -4,9 +4,9 @@ export const ATTENDING_VALUES = ["yes", "maybe", "no"] as const;
 export const PROTEIN_VALUES = ["pork", "beef", "chicken", "shrimp"] as const;
 
 export const rsvpSchema = z.object({
-  name: z.string().trim().min(1, "Tell me who you are."),
+  name: z.string().trim().min(1, "Sag mir, wer du bist."),
   attending: z.enum(ATTENDING_VALUES, {
-    message: "Pick one.",
+    message: "Wähle eine Option.",
   }),
   proteins: z.array(z.enum(PROTEIN_VALUES)).optional(),
   diet: z.string().trim().max(280).optional().or(z.literal("")),

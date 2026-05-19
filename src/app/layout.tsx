@@ -25,9 +25,9 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Girls Reunion · 2026",
+  title: "Mädels-Treffen · 2026",
   description:
-    "An intimate gathering — six women, countless memories, one unforgettable evening.",
+    "Ein intimes Beisammensein — sechs Frauen, unzählige Erinnerungen, ein unvergesslicher Abend.",
 };
 
 export default function RootLayout({
@@ -37,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="de"
       className={`${cormorant.variable} ${italiana.variable} ${manrope.variable}`}
     >
       <body>{children}</body>

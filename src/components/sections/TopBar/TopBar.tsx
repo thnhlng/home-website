@@ -85,7 +85,7 @@ export function TopBar({ mark, links }: Props) {
         {mark}
       </Link>
 
-      <nav className={styles.nav} aria-label="Primary">
+      <nav className={styles.nav} aria-label="Hauptnavigation">
         {links.map((link) => {
           const active = activeHref === link.href;
           return (
@@ -106,7 +106,7 @@ export function TopBar({ mark, links }: Props) {
       <button
         type="button"
         className={styles.menuToggle}
-        aria-label={menuOpen ? "Close menu" : "Open menu"}
+        aria-label={menuOpen ? "Menü schließen" : "Menü öffnen"}
         aria-expanded={menuOpen}
         aria-controls="topbar-drawer"
         onClick={() => setMenuOpen((v) => !v)}
@@ -124,7 +124,7 @@ export function TopBar({ mark, links }: Props) {
           menuOpen ? `${styles.drawer} ${styles.drawerOpen}` : styles.drawer
         }
       >
-        <nav className={styles.drawerNav} aria-label="Mobile">
+        <nav className={styles.drawerNav} aria-label="Mobile Navigation">
           {links.map((link) => {
             const active = activeHref === link.href;
             return (

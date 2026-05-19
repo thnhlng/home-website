@@ -9,88 +9,88 @@ import { Gallery } from "@/components/sections/Gallery";
 import { Footer, HeartDot } from "@/components/sections/Footer";
 
 const topBarProps = {
-  mark: "Girls Reunion · 2026",
+  mark: "Mädels-Treffen · 2026",
   links: [
-    { label: "Invitation", href: "#invitation" },
+    { label: "Einladung", href: "#invitation" },
     { label: "Details", href: "#details" },
-    { label: "Evening", href: "#schedule" },
-    { label: "Menu", href: "#menu" },
-    { label: "RSVP", href: "#rsvp" },
-    { label: "Gallery", href: "#gallery" },
+    { label: "Abend", href: "#schedule" },
+    { label: "Menü", href: "#menu" },
+    { label: "Antwort", href: "#rsvp" },
+    { label: "Galerie", href: "#gallery" },
   ],
 };
 
 const footerProps = {
-  pill: "A private page · for the six of us",
+  pill: "Eine private Seite · nur für uns sechs",
   headline: (
     <>
-      Thank you for being
+      Danke, dass ihr die Menschen seid,
       <br />
-      the people I’d pick again, <em>every time.</em>
+      die ich jedes Mal wieder wählen würde, <em>immer und immer.</em>
     </>
   ),
   message:
-    "This page is a quiet little corner of the internet, just for us. Don’t share the link — and bring your softest self on the seventeenth.",
+    "Diese Seite ist eine stille kleine Ecke des Internets, nur für uns. Teilt den Link nicht — und bringt am Siebzehnten euer sanftestes Selbst mit.",
   meta: [
-    "Girls Reunion · MMXXVI",
+    "Mädels-Treffen · MMXXVI",
     <>
-      Made <HeartDot /> with love, by your host
+      Mit <HeartDot /> und Liebe gemacht, von eurer Gastgeberin
     </>,
     "quyen@thereunion.club",
   ],
 };
 
 const heroProps = {
-  eyebrow: "An Intimate Gathering · October 17, 2026",
-  headlineLead: "Girls",
-  headlineAccent: "Reunion",
-  headlineSuffix: "twenty · twenty · six",
+  eyebrow: "Ein intimes Beisammensein · 17. Oktober 2026",
+  headlineLead: "Mädels",
+  headlineAccent: "Treffen",
+  headlineSuffix: "zwanzig · sechsundzwanzig",
   subtitle:
-    "Six women, countless memories, one unforgettable evening — back together, finally, under one warm roof.",
+    "Sechs Frauen, unzählige Erinnerungen, ein unvergesslicher Abend — endlich wieder vereint, unter einem warmen Dach.",
   eventDate: "2026-10-17T19:00:00",
   meta: [
-    { label: "Saturday", value: "17 · October · 2026" },
-    { label: "From", value: "7 o’clock in the evening" },
-    { label: "At", value: "Quyen’s home, Brooklyn" },
+    { label: "Samstag", value: "17 · Oktober · 2026" },
+    { label: "Ab", value: "19 Uhr abends" },
+    { label: "Bei", value: "Quyen zu Hause, Brooklyn" },
   ],
-  primaryCta: { label: "RSVP Now", href: "#rsvp" },
-  secondaryCta: { label: "View Details", href: "#details" },
+  primaryCta: { label: "Jetzt antworten", href: "#rsvp" },
+  secondaryCta: { label: "Details ansehen", href: "#details" },
 };
 
 const invitationProps = {
-  frameTag: "est. since school days",
-  eyebrow: "A Letter From The Host",
-  headlineLead: "My dearest",
-  headlineAccent: "six",
+  frameTag: "verbunden seit Schulzeiten",
+  eyebrow: "Ein Brief von der Gastgeberin",
+  headlineLead: "Meine liebsten",
+  headlineAccent: "sechs",
   paragraphs: [
-    "It has been far too long since we were all in the same room — laughing too loudly, finishing each other’s sentences, and refusing to leave the kitchen.",
-    "So I’m clearing the calendar, lighting every candle I own, and opening my home to the women who have been my family for as long as I can remember. No agenda. No formalities. Just us, a long table, and the kind of conversations that make you forget what time it is.",
-    "Come hungry. Come early. Bring the stories.",
+    "Es ist viel zu lange her, dass wir alle im selben Raum waren — zu laut lachend, einander die Sätze beendend und uns weigernd, die Küche zu verlassen.",
+    "Also räume ich meinen Kalender frei, zünde jede Kerze an, die ich besitze, und öffne mein Zuhause für die Frauen, die für mich Familie sind, solange ich denken kann. Kein Plan. Keine Förmlichkeiten. Nur wir, ein langer Tisch und die Art von Gesprächen, bei denen man die Zeit vergisst.",
+    "Kommt hungrig. Kommt früh. Bringt die Geschichten mit.",
   ],
   signature: "Quyen",
-  signatureRole: "Your Host, Friend & Fellow Troublemaker",
+  signatureRole: "Eure Gastgeberin, Freundin & Mitverschwörerin",
 };
 
 const detailsProps = {
-  eyebrow: "The Particulars",
-  headlineLead: "Everything you need to",
-  headlineAccent: "know",
+  eyebrow: "Die Einzelheiten",
+  headlineLead: "Alles, was ihr",
+  headlineAccent: "wissen müsst",
   items: [
     {
       num: "i.",
-      label: "Date & Time",
+      label: "Datum & Uhrzeit",
       primary: (
         <>
-          Saturday, <em>October 17</em>
+          Samstag, <em>17. Oktober</em>
           <br />
-          7:00 pm — late
+          19:00 Uhr — bis spät
         </>
       ),
-      sub: "Dinner at 8 sharp. Please don’t be early.",
+      sub: "Essen pünktlich um 20 Uhr. Bitte kommt nicht zu früh.",
     },
     {
       num: "ii.",
-      label: "Address",
+      label: "Adresse",
       primary: (
         <>
           12 Linden Lane
@@ -98,234 +98,234 @@ const detailsProps = {
           Brooklyn, NY 11215
         </>
       ),
-      sub: "Brownstone, garden-level entrance, look for the lamp.",
+      sub: "Brownstone, Eingang auf Gartenebene, sucht nach der Lampe.",
     },
     {
       num: "iii.",
-      label: "Parking",
+      label: "Parken",
       primary: (
         <>
-          Free street parking
+          Kostenlos auf der Straße
           <br />
-          after 7 pm
+          ab 19 Uhr
         </>
       ),
-      sub: "Linden Lane & 7th Avenue — easiest blocks.",
+      sub: "Linden Lane & 7th Avenue — die einfachsten Blöcke.",
     },
     {
       num: "iv.",
-      label: "Public Transit",
+      label: "Öffentliche Verkehrsmittel",
       primary: (
         <>
-          F or G to <em>7th Avenue</em>
+          F oder G bis <em>7th Avenue</em>
           <br />
-          4-minute walk
+          4 Minuten zu Fuß
         </>
       ),
-      sub: "Last train back: 1:48 am. Or stay over.",
+      sub: "Letzter Zug zurück: 1:48 Uhr. Oder bleibt einfach über Nacht.",
     },
     {
       num: "v.",
-      label: "Dress Code",
+      label: "Kleidung",
       primary: (
         <>
-          Cozy <em>elegant</em>
+          Gemütlich <em>elegant</em>
           <br />
-          Soft fabrics, warm tones
+          Weiche Stoffe, warme Töne
         </>
       ),
-      sub: "Slippers provided at the door.",
+      sub: "Hausschuhe gibt es an der Tür.",
     },
     {
       num: "vi.",
-      label: "Bring",
+      label: "Mitbringen",
       primary: (
         <>
-          Yourself
-          <br />+ one memory to share
+          Euch selbst
+          <br />+ eine Erinnerung zum Teilen
         </>
       ),
-      sub: "Optional: a snack or bottle you love.",
+      sub: "Optional: ein Snack oder eine Flasche, die ihr liebt.",
     },
   ],
 };
 
 const scheduleProps = {
-  eyebrow: "The Evening",
-  headlineLead: "A loose plan,",
-  headlineAccent: "followed loosely",
+  eyebrow: "Der Abend",
+  headlineLead: "Ein lockerer Plan,",
+  headlineAccent: "locker befolgt",
   items: [
     {
-      time: "7:00",
-      title: "Welcome drinks",
-      note: "Sparkling wine, pomegranate spritz, something warm if it’s cold.",
+      time: "19:00",
+      title: "Begrüßungsdrinks",
+      note: "Sekt, Granatapfel-Spritz, etwas Warmes, falls es kalt ist.",
       highlight: true,
     },
     {
-      time: "8:00",
-      title: "Dinner at the long table",
-      note: "Slow, candle-lit, no phones unless they’re playing music.",
+      time: "20:00",
+      title: "Essen am langen Tisch",
+      note: "Langsam, bei Kerzenschein, keine Handys — außer sie spielen Musik.",
     },
     {
-      time: "9:30",
-      title: "Memory-sharing moment",
-      note: "One story each — pick the one we’d never let you live down.",
+      time: "21:30",
+      title: "Erinnerungsmoment",
+      note: "Eine Geschichte pro Person — wählt die, die wir euch nie vergessen lassen würden.",
     },
     {
-      time: "10:30",
-      title: "The infamous quiz",
-      note: "How well do you really know us? Prepare to be roasted.",
+      time: "22:30",
+      title: "Das berüchtigte Quiz",
+      note: "Wie gut kennt ihr uns wirklich? Macht euch auf was gefasst.",
     },
     {
-      time: "11:30",
-      title: "Music, photos & talking ’til late",
-      note: "Dance floor optional. Whispered confessions encouraged.",
+      time: "23:30",
+      title: "Musik, Fotos & Gespräche bis spät",
+      note: "Tanzfläche optional. Geflüsterte Geständnisse erwünscht.",
     },
   ],
 };
 
 const menuProps = {
-  eyebrow: "At The Table",
-  headlineLead: "Dinner, slowly,",
-  headlineAccent: "together",
+  eyebrow: "Am Tisch",
+  headlineLead: "Essen, in Ruhe,",
+  headlineAccent: "gemeinsam",
   columns: [
     {
-      title: "To Begin",
+      title: "Zum Auftakt",
       items: [
         {
-          name: "Burrata & roasted figs",
-          desc: "Honey, thyme, sourdough crostini.",
+          name: "Burrata & geröstete Feigen",
+          desc: "Honig, Thymian, Sauerteig-Crostini.",
           tag: "V",
         },
         {
-          name: "Smoked beet carpaccio",
-          desc: "Walnut, orange zest, soft goat cheese.",
+          name: "Geräuchertes Rote-Bete-Carpaccio",
+          desc: "Walnuss, Orangenschale, weicher Ziegenkäse.",
           tag: "V · GF",
         },
         {
-          name: "Warm olives & marcona almonds",
-          desc: "Rosemary, sea salt, lemon peel.",
+          name: "Warme Oliven & Marcona-Mandeln",
+          desc: "Rosmarin, Meersalz, Zitronenschale.",
           tag: "VG · GF",
         },
       ],
     },
     {
-      title: "The Main Course",
+      title: "Der Hauptgang",
       items: [
         {
-          name: "Slow-braised short rib",
-          desc: "Red wine reduction, soft polenta, gremolata.",
+          name: "Langsam geschmorte Rinderrippe",
+          desc: "Rotwein-Reduktion, weiche Polenta, Gremolata.",
           tag: "GF",
         },
         {
-          name: "Saffron & lemon risotto",
-          desc: "Parmigiano, charred leeks, brown butter.",
+          name: "Safran-Zitronen-Risotto",
+          desc: "Parmigiano, angekohlter Lauch, braune Butter.",
           tag: "V · GF",
         },
         {
-          name: "Roasted heirloom carrots",
-          desc: "Tahini, dukkah, pomegranate.",
+          name: "Geröstete alte Karottensorten",
+          desc: "Tahini, Dukkah, Granatapfel.",
           tag: "VG · GF",
         },
       ],
     },
     {
-      title: "Something Sweet",
+      title: "Etwas Süßes",
       items: [
         {
-          name: "Olive oil cake",
-          desc: "Citrus glaze, candied rosemary.",
+          name: "Olivenöl-Kuchen",
+          desc: "Zitrusglasur, kandierter Rosmarin.",
           tag: "V",
         },
         {
-          name: "Dark chocolate & sea salt",
-          desc: "70% Valrhona, flaked Maldon.",
+          name: "Dunkle Schokolade & Meersalz",
+          desc: "70 % Valrhona, Maldon-Flocken.",
           tag: "VG · GF",
         },
         {
-          name: "Espresso, mint tea, digestifs",
-          desc: "Take your pick — we’ll be up a while.",
+          name: "Espresso, Pfefferminztee, Digestifs",
+          desc: "Wählt aus — wir bleiben noch eine Weile wach.",
         },
       ],
     },
     {
-      title: "To Pour",
+      title: "Zum Ausschenken",
       items: [
         {
-          name: "Champagne welcome",
-          desc: "Blanc de blancs, very cold.",
+          name: "Champagner zum Empfang",
+          desc: "Blanc de Blancs, eiskalt.",
         },
         {
-          name: "Red — Sangiovese, Tuscany",
-          desc: "Earthy, easy, made for short rib.",
+          name: "Rot — Sangiovese, Toskana",
+          desc: "Erdig, unkompliziert, wie gemacht für die Rinderrippe.",
         },
         {
-          name: "White — Albariño, Rías Baixas",
-          desc: "Bright, salty, made for risotto.",
+          name: "Weiß — Albariño, Rías Baixas",
+          desc: "Frisch, salzig, wie gemacht fürs Risotto.",
         },
         {
-          name: "Zero-proof",
-          desc: "Pomegranate spritz, ginger-honey fizz, herbal infusions.",
+          name: "Alkoholfrei",
+          desc: "Granatapfel-Spritz, Ingwer-Honig-Fizz, Kräuteraufgüsse.",
         },
       ],
     },
   ],
   allergyNote:
-    "A note on allergies — tell me on your RSVP and I’ll quietly take care of it. There will always be something gorgeous for you to eat.",
+    "Ein Hinweis zu Allergien — schreibt es mir in eurer Antwort, und ich kümmere mich leise darum. Es wird immer etwas Wunderbares für euch zu essen geben.",
   allergyFootnote:
-    "If you have a favourite bottle or a treasured family snack — bring it. Not required, always welcomed.",
+    "Wenn ihr eine Lieblingsflasche oder einen geliebten Familien-Snack habt — bringt ihn mit. Keine Pflicht, immer willkommen.",
 };
 
 const rsvpProps = {
-  eyebrow: "Kindly Reply",
-  headlineLead: "Tell me you’re",
-  headlineAccent: "coming",
+  eyebrow: "Bitte antworten",
+  headlineLead: "Sag mir, dass du",
+  headlineAccent: "kommst",
   headlineSuffix: ".",
   intro: (
     <>
-      I promise this is the only form you’ll have to fill in. RSVPs by{" "}
-      <strong>October 3</strong>, please — so I can plan the table and the
-      playlist.
+      Versprochen, das ist das einzige Formular, das ihr ausfüllen müsst.
+      Antworten bitte bis zum <strong>3. Oktober</strong> — damit ich den Tisch
+      und die Playlist planen kann.
     </>
   ),
   directLine: {
-    label: "Direct Line",
+    label: "Direkter Draht",
     lines: [
-      <>text Quyen · +1 347 555 0184</>,
+      <>Schreibt Quyen · +1 347 555 0184</>,
       <>quyen@thereunion.club</>,
     ],
   },
-  thanksHeadlineLead: "I knew it.",
-  thanksHeadlineAccent: "I’m so glad.",
+  thanksHeadlineLead: "Ich wusste es.",
+  thanksHeadlineAccent: "Ich freu mich so.",
   thanksMessage:
-    "You’ll get a little note from me a few days before. Until then — start thinking of your story.",
-  submitLabel: "Send my reply",
-  editLabel: "Edit my reply",
+    "Ein paar Tage vorher bekommst du noch eine kleine Nachricht von mir. Bis dahin — überlegt euch eure Geschichte.",
+  submitLabel: "Antwort senden",
+  editLabel: "Antwort bearbeiten",
 };
 
 const galleryProps = {
-  eyebrow: "After The Night",
-  headlineLead: "The Sunday Morning",
-  headlineAccent: "gallery",
+  eyebrow: "Nach der Nacht",
+  headlineLead: "Die Sonntagmorgen-",
+  headlineAccent: "Galerie",
   lede:
-    "This space will fill itself with the photos we took. Check back the morning after — and download anything you’d like to keep forever.",
+    "Dieser Raum füllt sich mit den Fotos, die wir gemacht haben. Schaut am Morgen danach wieder vorbei — und ladet euch alles herunter, was ihr für immer behalten möchtet.",
   items: [
-    { alt: "The arrival", placeholder: "The arrival", size: "tall" as const },
-    { alt: "The table", placeholder: "The table" },
-    { alt: "The toast", placeholder: "The toast" },
+    { alt: "Das Ankommen", placeholder: "Das Ankommen", size: "tall" as const },
+    { alt: "Der Tisch", placeholder: "Der Tisch" },
+    { alt: "Der Toast", placeholder: "Der Toast" },
     {
-      alt: "The whole group, finally",
-      placeholder: "The whole group, finally",
+      alt: "Die ganze Gruppe, endlich",
+      placeholder: "Die ganze Gruppe, endlich",
       size: "wide" as const,
     },
-    { alt: "Mid-laugh", placeholder: "Mid-laugh" },
-    { alt: "The candles", placeholder: "The candles" },
-    { alt: "The dance floor", placeholder: "The dance floor" },
-    { alt: "The very last one", placeholder: "The very last one" },
+    { alt: "Mitten im Lachen", placeholder: "Mitten im Lachen" },
+    { alt: "Die Kerzen", placeholder: "Die Kerzen" },
+    { alt: "Die Tanzfläche", placeholder: "Die Tanzfläche" },
+    { alt: "Das allerletzte", placeholder: "Das allerletzte" },
   ],
   locked: {
-    message: "The full gallery unlocks on October 18 at noon.",
-    ctaLabel: "Download all photos",
+    message: "Die vollständige Galerie wird am 18. Oktober um 12 Uhr freigeschaltet.",
+    ctaLabel: "Alle Fotos herunterladen",
   },
 };
 

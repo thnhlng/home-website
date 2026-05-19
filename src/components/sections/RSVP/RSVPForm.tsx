@@ -21,9 +21,9 @@ type AttendingOption = {
 };
 
 const ATTENDING_OPTIONS: AttendingOption[] = [
-  { value: "yes", numeral: "i.", label: "Yes, of course" },
-  { value: "maybe", numeral: "ii.", label: "Trying my best" },
-  { value: "no", numeral: "iii.", label: "Can’t this time" },
+  { value: "yes", numeral: "i.", label: "Ja, natürlich" },
+  { value: "maybe", numeral: "ii.", label: "Ich gebe mein Bestes" },
+  { value: "no", numeral: "iii.", label: "Diesmal leider nicht" },
 ];
 
 type ProteinOption = {
@@ -32,10 +32,10 @@ type ProteinOption = {
 };
 
 const PROTEIN_OPTIONS: ProteinOption[] = [
-  { value: "pork", label: "Pork" },
-  { value: "beef", label: "Beef" },
-  { value: "chicken", label: "Chicken" },
-  { value: "shrimp", label: "Shrimp" },
+  { value: "pork", label: "Schwein" },
+  { value: "beef", label: "Rind" },
+  { value: "chicken", label: "Hähnchen" },
+  { value: "shrimp", label: "Garnele" },
 ];
 
 type Props = {
@@ -86,7 +86,7 @@ export function RSVPForm({
         setSubmitted(true);
       } else {
         setFormError(
-          result.formError ?? "Something went wrong — try again in a moment.",
+          result.formError ?? "Etwas ist schiefgelaufen — versuch es gleich noch einmal.",
         );
       }
     });
@@ -121,13 +121,13 @@ export function RSVPForm({
     <form className={styles.form} onSubmit={onSubmit} noValidate>
       <div className={styles.field}>
         <label className={styles.label} htmlFor="rsvp-name">
-          Your Name
+          Dein Name
         </label>
         <input
           id="rsvp-name"
           type="text"
           autoComplete="name"
-          placeholder="The one we use, not the one on your passport"
+          placeholder="Der, den wir benutzen, nicht der im Pass"
           aria-invalid={errors.name ? true : undefined}
           {...register("name")}
         />
@@ -137,7 +137,7 @@ export function RSVPForm({
       </div>
 
       <fieldset className={styles.field}>
-        <legend className={styles.label}>Will you be there?</legend>
+        <legend className={styles.label}>Bist du dabei?</legend>
         <div className={styles.radioRow} role="radiogroup">
           {ATTENDING_OPTIONS.map((opt) => {
             const active = attending === opt.value;
@@ -167,8 +167,8 @@ export function RSVPForm({
 
       <fieldset className={styles.field}>
         <legend className={styles.label}>
-          What you’d like to eat{" "}
-          <span className={styles.labelHint}>(pick any)</span>
+          Was möchtest du essen{" "}
+          <span className={styles.labelHint}>(mehrere möglich)</span>
         </legend>
         <div className={styles.chipsRow}>
           {PROTEIN_OPTIONS.map((opt) => {
@@ -198,12 +198,12 @@ export function RSVPForm({
 
       <div className={styles.field}>
         <label className={styles.label} htmlFor="rsvp-diet">
-          Allergies or things you don’t eat
+          Allergien oder Dinge, die du nicht isst
         </label>
         <input
           id="rsvp-diet"
           type="text"
-          placeholder="Be honest — I’d rather know."
+          placeholder="Sei ehrlich — ich will’s lieber wissen."
           {...register("diet")}
         />
         {errors.diet && (
@@ -213,12 +213,12 @@ export function RSVPForm({
 
       <div className={styles.field}>
         <label className={styles.label} htmlFor="rsvp-song">
-          One song for the playlist
+          Ein Song für die Playlist
         </label>
         <input
           id="rsvp-song"
           type="text"
-          placeholder="The one that takes you back to us."
+          placeholder="Der, der dich zu uns zurückbringt."
           {...register("song")}
         />
         {errors.song && (
@@ -228,11 +228,11 @@ export function RSVPForm({
 
       <div className={styles.field}>
         <label className={styles.label} htmlFor="rsvp-message">
-          A note for the group
+          Eine Nachricht an die Gruppe
         </label>
         <textarea
           id="rsvp-message"
-          placeholder="Anything you want us to know before the night."
+          placeholder="Alles, was wir vor dem Abend wissen sollten."
           {...register("message")}
         />
         {errors.message && (
@@ -251,7 +251,7 @@ export function RSVPForm({
         className={`${styles.btn} ${styles.btnPrimary} ${styles.btnSubmit}`}
         disabled={isPending}
       >
-        {isPending ? "Sending…" : submitLabel}{" "}
+        {isPending ? "Wird gesendet…" : submitLabel}{" "}
         <span className={styles.arrow}>→</span>
       </button>
     </form>

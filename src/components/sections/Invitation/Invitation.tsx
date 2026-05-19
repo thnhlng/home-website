@@ -18,7 +18,7 @@ type Props = {
 
 export function Invitation({
   photo,
-  photoPlaceholder = "Drop your favourite group photo",
+  photoPlaceholder = "Legt euer liebstes Gruppenfoto hier ab",
   frameTag,
   eyebrow,
   headlineLead,

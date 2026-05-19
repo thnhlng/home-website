@@ -33,22 +33,22 @@ export function Countdown({ targetDate }: Props) {
   }, [targetDate]);
 
   return (
-    <div className={styles.countdown} aria-label="Time until the event">
+    <div className={styles.countdown} aria-label="Zeit bis zur Feier">
       <div className={styles.cdUnit}>
         <div className={styles.cdNum}>{parts.days}</div>
-        <div className={styles.cdLabel}>Days</div>
+        <div className={styles.cdLabel}>Tage</div>
       </div>
       <div className={styles.cdUnit}>
         <div className={styles.cdNum}>{parts.hours}</div>
-        <div className={styles.cdLabel}>Hours</div>
+        <div className={styles.cdLabel}>Stunden</div>
       </div>
       <div className={styles.cdUnit}>
         <div className={styles.cdNum}>{parts.mins}</div>
-        <div className={styles.cdLabel}>Minutes</div>
+        <div className={styles.cdLabel}>Minuten</div>
       </div>
       <div className={styles.cdUnit}>
         <div className={styles.cdNum}>{parts.secs}</div>
-        <div className={styles.cdLabel}>Seconds</div>
+        <div className={styles.cdLabel}>Sekunden</div>
       </div>
     </div>
   );
