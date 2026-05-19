@@ -40,7 +40,6 @@ export function Hero({
           <em className={styles.headlineSuffix}>{headlineSuffix}</em>
         </h1>
         <p className={styles.subtitle}>{subtitle}</p>
-        <p>Ich bin ein Test</p>
 
         <Countdown targetDate={eventDate} />
 

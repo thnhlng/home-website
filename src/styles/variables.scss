@@ -15,7 +15,7 @@ $color-rule:          rgba(30, 42, 31, 0.14);
 // Fonts — wired to next/font CSS variables set on <html>
 $font-display: var(--font-display), "EB Garamond", Georgia, serif;
 $font-body:    var(--font-body), system-ui, -apple-system, sans-serif;
-$font-caps:    var(--font-caps), "Cormorant Garamond", serif;
+$font-caps:    var(--font-body), system-ui, -apple-system, sans-serif;
 
 // Spacing — fluid tokens
 $pad-x:     clamp(20px, 5vw, 88px);

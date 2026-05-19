@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Italiana, Manrope } from "next/font/google";
+import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.scss";
 
 const cormorant = Cormorant_Garamond({
@@ -7,13 +7,6 @@ const cormorant = Cormorant_Garamond({
   subsets: ["latin", "latin-ext"],
   weight: ["400"],
   style: ["normal", "italic"],
-  display: "swap",
-});
-
-const italiana = Italiana({
-  variable: "--font-caps",
-  subsets: ["latin"],
-  weight: ["400"],
   display: "swap",
 });
 
@@ -38,7 +31,7 @@ export default function RootLayout({
   return (
     <html
       lang="de"
-      className={`${cormorant.variable} ${italiana.variable} ${manrope.variable}`}
+      className={`${cormorant.variable} ${manrope.variable}`}
     >
       <body>{children}</body>
     </html>
