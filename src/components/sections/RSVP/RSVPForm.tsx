@@ -51,6 +51,7 @@ export function RSVPForm({
     resolver: zodResolver(rsvpSchema),
     defaultValues: {
       proteins: [],
+      song: "",
     },
   });
 
@@ -131,6 +132,21 @@ export function RSVPForm({
           <p className={styles.fieldError}>{errors.proteins.message}</p>
         )}
       </fieldset>
+
+      <div className={styles.field}>
+        <label className={styles.label} htmlFor="rsvp-song">
+          Ein Song für die Playlist
+        </label>
+        <input
+          id="rsvp-song"
+          type="text"
+          placeholder="Der, der dich zu uns zurückbringt."
+          {...register("song")}
+        />
+        {errors.song && (
+          <p className={styles.fieldError}>{errors.song.message}</p>
+        )}
+      </div>
 
       {formError && (
         <p className={styles.formError} role="alert">
