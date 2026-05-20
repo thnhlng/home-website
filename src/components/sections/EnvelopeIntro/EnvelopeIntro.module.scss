@@ -1,0 +1,282 @@
+@use "@/styles/variables" as v;
+
+.stage {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(60% 50% at 50% 38%, rgba(200, 212, 184, 0.55), transparent 70%),
+    v.$color-cream;
+  perspective: 1500px;
+  font-family: v.$font-body;
+  transition: opacity 400ms ease, background 600ms ease;
+
+  &[data-phase="expanding"] {
+    background: v.$color-cream;
+    opacity: 0;
+    transition: opacity 800ms ease 350ms;
+  }
+}
+
+.skip {
+  position: absolute;
+  top: clamp(12px, 3vw, 28px);
+  right: clamp(12px, 3vw, 28px);
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 14px;
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  color: v.$color-ink-soft;
+  font-family: v.$font-body;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 200ms ease, background 200ms ease;
+
+  &:hover,
+  &:focus-visible {
+    color: v.$color-burgundy;
+    background: rgba(255, 255, 255, 0.4);
+    outline: none;
+  }
+
+  &:focus-visible {
+    box-shadow: 0 0 0 2px v.$color-blush;
+  }
+}
+
+.envelope {
+  position: relative;
+  width: min(420px, 86vw);
+  aspect-ratio: 5 / 3;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  animation: float 5s ease-in-out infinite;
+  filter: drop-shadow(0 18px 28px rgba(31, 51, 36, 0.18));
+
+  &:disabled {
+    cursor: default;
+    animation: none;
+  }
+
+  &:focus-visible {
+    outline: none;
+
+    .body,
+    .flap {
+      box-shadow: 0 0 0 2px v.$color-gold inset;
+    }
+  }
+}
+
+.back {
+  position: absolute;
+  inset: 0;
+  background: v.$color-burgundy-deep;
+  border-radius: 4px;
+  z-index: 1;
+  transition: opacity 360ms ease;
+}
+
+.body {
+  position: absolute;
+  inset: 0;
+  background: v.$color-burgundy;
+  clip-path: polygon(0 0, 50% 50%, 100% 0, 100% 100%, 0 100%);
+  z-index: 3;
+  border-radius: 4px;
+  transition: opacity 360ms ease;
+}
+
+.flap {
+  position: absolute;
+  inset: 0;
+  background: v.$color-burgundy;
+  clip-path: polygon(0 0, 100% 0, 50% 50%);
+  transform-origin: top center;
+  transform: rotateX(0deg);
+  backface-visibility: hidden;
+  transition:
+    transform 600ms cubic-bezier(0.7, 0, 0.3, 1),
+    opacity 360ms ease,
+    z-index 0s 300ms;
+  z-index: 4;
+  filter: brightness(0.96);
+  border-radius: 4px 4px 0 0;
+}
+
+.stage[data-phase="expanding"] .back,
+.stage[data-phase="expanding"] .body,
+.stage[data-phase="expanding"] .flap {
+  opacity: 0;
+}
+
+.stage:not([data-phase="idle"]) .flap {
+  transform: rotateX(180deg);
+  z-index: 1;
+}
+
+.seal {
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: v.$color-gold;
+  color: v.$color-burgundy-deep;
+  font-family: v.$font-display;
+  font-style: italic;
+  font-size: 1.4rem;
+  transform: translate(-50%, -50%);
+  backface-visibility: hidden;
+  box-shadow:
+    0 1px 0 v.$color-gold-soft inset,
+    0 4px 10px rgba(31, 51, 36, 0.25);
+}
+
+.letter {
+  position: absolute;
+  inset: 14% 9% 18%;
+  background: v.$color-cream;
+  border: 1px solid v.$color-rule;
+  border-radius: 2px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  padding: clamp(12px, 3vw, 20px);
+  box-shadow: 0 1px 2px rgba(31, 51, 36, 0.08);
+  transition:
+    transform 850ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    opacity 300ms ease;
+  will-change: transform, opacity;
+}
+
+.stage[data-phase="letterOut"] .letter,
+.stage[data-phase="unfolding"] .letter {
+  transform: translateY(-58%);
+}
+
+.stage[data-phase="expanding"] .letter {
+  transform: translateY(-58%) scale(36);
+  opacity: 0;
+  transition:
+    transform 900ms cubic-bezier(0.6, 0, 0.4, 1),
+    opacity 400ms ease 700ms;
+}
+
+.letterInner {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.letterMonogram {
+  font-family: v.$font-display;
+  font-style: italic;
+  font-size: clamp(1.4rem, 2.6vw, 1.8rem);
+  color: v.$color-burgundy;
+  line-height: 1;
+}
+
+.letterRule {
+  width: 28px;
+  height: 1px;
+  background: v.$color-gold;
+  opacity: 0.7;
+}
+
+.letterPreview {
+  font-family: v.$font-display;
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  color: v.$color-ink-soft;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+}
+
+.address {
+  position: absolute;
+  bottom: clamp(64px, 12vw, 112px);
+  font-family: v.$font-display;
+  font-style: italic;
+  font-size: clamp(1rem, 2.4vw, 1.2rem);
+  color: v.$color-burgundy-deep;
+  letter-spacing: 0.04em;
+  text-align: center;
+  padding: 0 16px;
+  transition: opacity 400ms ease;
+}
+
+.hint {
+  position: absolute;
+  bottom: clamp(20px, 4vw, 40px);
+  font-family: v.$font-body;
+  font-size: 0.75rem;
+  color: v.$color-taupe;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: hintIn 700ms ease 1600ms forwards, hintPulse 2.6s ease-in-out 2400ms infinite;
+}
+
+.stage:not([data-phase="idle"]) .hint,
+.stage:not([data-phase="idle"]) .address {
+  opacity: 0;
+  animation: none;
+  transition: opacity 300ms ease;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-0.6deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(0.6deg);
+  }
+}
+
+@keyframes hintIn {
+  to {
+    opacity: 0.85;
+  }
+}
+
+@keyframes hintPulse {
+  0%,
+  100% {
+    opacity: 0.85;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .envelope,
+  .flap,
+  .letter,
+  .hint {
+    animation: none !important;
+    transition: opacity 300ms ease !important;
+  }
+
+  .stage:not([data-phase="idle"]) {
+    opacity: 0;
+    transition: opacity 500ms ease;
+  }
+}

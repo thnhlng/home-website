@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { EnvelopeIntroGate } from "@/components/sections/EnvelopeIntro";
 import "./globals.scss";
 
 const cormorant = Cormorant_Garamond({
@@ -33,7 +34,23 @@ export default function RootLayout({
       lang="de"
       className={`${cormorant.variable} ${manrope.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        {children}
+        <EnvelopeIntroGate
+          monogram="Q"
+          addressLine="An meine liebsten sechs"
+          letterPreview={
+            <>
+              Mädels-Treffen
+              <br />
+              <em>17 · Oktober · 2026</em>
+            </>
+          }
+          openLabel="Einladung öffnen"
+          skipLabel="Überspringen"
+          hint="Antippen zum Öffnen"
+        />
+      </body>
     </html>
   );
 }
