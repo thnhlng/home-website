@@ -38,7 +38,7 @@ export default function RootLayout({
         {children}
         <EnvelopeIntroGate
           monogram="Q"
-          addressLine="An meine liebsten sechs"
+          addressLine="An meine liebsten fünf"
           letterPreview={
             <>
               Fürobebier-Girls
