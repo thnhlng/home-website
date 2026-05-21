@@ -1,8 +1,8 @@
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
 import styles from "./Invitation.module.scss";
 
-type Photo = { src: string; alt: string };
+type Photo = { src: string | StaticImageData; alt: string };
 
 type Props = {
   photo?: Photo;

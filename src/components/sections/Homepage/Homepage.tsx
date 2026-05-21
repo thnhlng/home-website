@@ -7,6 +7,7 @@ import { Menu } from "@/components/sections/Menu";
 import { RSVP } from "@/components/sections/RSVP";
 import { Gallery } from "@/components/sections/Gallery";
 import { Footer, HeartDot } from "@/components/sections/Footer";
+import groupPhoto from "@/assets/groupphoto.jpeg";
 
 const topBarProps = {
   mark: "Fürobebier-Girls · 2026",
@@ -30,7 +31,7 @@ const footerProps = {
     </>
   ),
   message:
-    "Diese Seite ist eine stille kleine Ecke des Internets, nur für uns. Teilt den Link nicht — und bringt am Siebzehnten euer sanftestes Selbst mit.",
+    "Diese Seite ist eine stille kleine Ecke des Internets, nur für uns. Teilt den Link nicht, und bringt am Zwanzigsten euer sanftestes Selbst mit.",
   meta: [
     "Fürobebier-Girls · MMXXVI",
     <>
@@ -46,12 +47,12 @@ const heroProps = {
   headlineAccent: "Girls",
   headlineSuffix: "zwanzig · sechsundzwanzig",
   subtitle:
-    "Sechs Frauen, unzählige Erinnerungen, ein unvergesslicher Abend — endlich wieder vereint, unter einem warmen Dach.",
+    "Sechs Frauen, unzählige Erinnerungen, ein unvergesslicher Abend. Endlich wieder vereint, unter einem warmen Dach.",
   eventDate: "2026-06-20T19:00:00",
   meta: [
     { label: "Samstag", value: "20 · Juni · 2026" },
     { label: "Ab", value: "19 Uhr abends" },
-    { label: "Bei", value: "Quyen zu Hause, Brooklyn" },
+    { label: "Bei", value: "Quyen zu Hause, Lenzburg" },
   ],
   primaryCta: { label: "Jetzt antworten", href: "#rsvp" },
   secondaryCta: { label: "Details ansehen", href: "#details" },
@@ -59,7 +60,7 @@ const heroProps = {
 
 const invitationProps = {
   photo: {
-    src: "/assets/photo.jpg",
+    src: groupPhoto,
     alt: "Gruppenfoto der sechs Freundinnen",
   },
   frameTag: "verbunden seit Schulzeiten",
@@ -67,7 +68,7 @@ const invitationProps = {
   headlineLead: "Meine liebsten",
   headlineAccent: "sechs",
   paragraphs: [
-    "Es ist viel zu lange her, dass wir alle im selben Raum waren — zu laut lachend, einander die Sätze beendend und uns weigernd, die Küche zu verlassen.",
+    "Es ist viel zu lange her, dass wir alle im selben Raum waren: zu laut lachend, einander die Sätze beendend und uns weigernd, die Küche zu verlassen.",
     "Also räume ich meinen Kalender frei, zünde jede Kerze an, die ich besitze, und öffne mein Zuhause für die Frauen, die für mich Familie sind, solange ich denken kann. Kein Plan. Keine Förmlichkeiten. Nur wir, ein langer Tisch und die Art von Gesprächen, bei denen man die Zeit vergisst.",
     "Kommt hungrig. Kommt früh. Bringt die Geschichten mit.",
   ],
@@ -87,54 +88,54 @@ const detailsProps = {
         <>
           Samstag, <em>20. Juni</em>
           <br />
-          19:00 Uhr — bis spät
+          19:00 Uhr, bis spät
         </>
       ),
       sub: "Essen pünktlich um 20 Uhr. Bitte kommt nicht zu früh.",
     },
     {
       num: "ii.",
-      label: "Adresse",
-      primary: (
-        <>
-          12 Linden Lane
-          <br />
-          Brooklyn, NY 11215
-        </>
-      ),
-      sub: "Brownstone, Eingang auf Gartenebene, sucht nach der Lampe.",
+      label: "Mitbringen",
+      primary: <>Gute Laune und euch selbst</>,
+      sub: "Optional: ein Snack oder eine Flasche, die ihr liebt.",
     },
     {
       num: "iii.",
+      label: "Öffentliche Verkehrsmittel",
+      primary: (
+        <>
+          Vom <em>Bahnhof Lenzburg</em>
+          <br />
+          zum Gustav Zeiler-Ring 18
+        </>
+      ),
+      sub: "Von dort sind es nur 6 Minuten zu Fuss zu uns.",
+      cta: {
+        href: "https://www.google.com/maps/dir/?api=1&origin=Bahnhof+Lenzburg&destination=Gustav+Zeiler-Ring+18,+5600+Lenzburg&travelmode=walking",
+        label: "Route in Google Maps",
+      },
+    },
+    {
+      num: "iv.",
       label: "Parken",
       primary: (
         <>
-          Kostenlos auf der Straße
+          Kostenlos auf der Strasse
           <br />
           ab 19 Uhr
         </>
       ),
-      sub: "Linden Lane & 7th Avenue — die einfachsten Blöcke.",
-    },
-    {
-      num: "iv.",
-      label: "Öffentliche Verkehrsmittel",
-      primary: (
-        <>
-          F oder G bis <em>7th Avenue</em>
-          <br />
-          4 Minuten zu Fuß
-        </>
-      ),
-      sub: "Letzter Zug zurück: 1:48 Uhr. Oder bleibt einfach über Nacht.",
-    },
-    {
-      num: "v.",
-      label: "Mitbringen",
-      primary: <>Euch selbst</>,
-      sub: "Optional: ein Snack oder eine Flasche, die ihr liebt.",
+      sub: "Hier könnt ihr parkieren.",
+      mapKey: "parking",
+      wide: true,
     },
   ],
+  parkingMap: {
+    src: "https://www.google.com/maps?q=47.390396,8.174247&hl=de&z=16&output=embed",
+    title: "Parkplatz in Lenzburg",
+    link: "https://maps.app.goo.gl/N4qBNzdmbts22TXCA",
+    label: "Zum Parkplatz",
+  },
 };
 
 const scheduleProps = {
@@ -144,19 +145,19 @@ const scheduleProps = {
   items: [
     {
       time: "19:00",
-      title: "Begrüßungsdrinks",
+      title: "Begrüssungsdrinks",
       note: "Sekt, Granatapfel-Spritz, etwas Warmes, falls es kalt ist.",
       highlight: true,
     },
     {
       time: "20:00",
       title: "Essen am langen Tisch",
-      note: "Langsam, bei Kerzenschein, keine Handys — außer sie spielen Musik.",
+      note: "Langsam, bei Kerzenschein, keine Handys, ausser sie spielen Musik.",
     },
     {
       time: "21:30",
       title: "Erinnerungsmoment",
-      note: "Eine Geschichte pro Person — wählt die, die wir euch nie vergessen lassen würden.",
+      note: "Eine Geschichte pro Person. Wählt die, die wir euch nie vergessen lassen würden.",
     },
     {
       time: "22:30",
@@ -195,21 +196,11 @@ const menuProps = {
       ],
     },
     {
-      title: "Etwas Süßes",
+      title: "Etwas Süsses",
       items: [
         {
-          name: "Olivenöl-Kuchen",
-          desc: "Zitrusglasur, kandierter Rosmarin.",
-          tag: "V",
-        },
-        {
-          name: "Dunkle Schokolade & Meersalz",
-          desc: "70 % Valrhona, Maldon-Flocken.",
-          tag: "VG · GF",
-        },
-        {
-          name: "Espresso, Pfefferminztee, Digestifs",
-          desc: "Wählt aus — wir bleiben noch eine Weile wach.",
+          name: "Überraschung",
+          desc: "Ein süsses Geheimnis zum Abschluss. Lasst euch verzaubern.",
         },
       ],
     },
@@ -221,11 +212,11 @@ const menuProps = {
           desc: "Blanc de Blancs, eiskalt.",
         },
         {
-          name: "Rot — Sangiovese, Toskana",
+          name: "Rot: Sangiovese, Toskana",
           desc: "Erdig, unkompliziert, wie gemacht für die Rinderrippe.",
         },
         {
-          name: "Weiß — Albariño, Rías Baixas",
+          name: "Weiss: Albariño, Rías Baixas",
           desc: "Frisch, salzig, wie gemacht fürs Risotto.",
         },
         {
@@ -236,9 +227,9 @@ const menuProps = {
     },
   ],
   allergyNote:
-    "Ein Hinweis zu Allergien — schreibt es mir in eurer Antwort, und ich kümmere mich leise darum. Es wird immer etwas Wunderbares für euch zu essen geben.",
+    "Ein Hinweis zu Allergien: schreibt es mir in eurer Antwort, und ich kümmere mich leise darum. Es wird immer etwas Wunderbares für euch zu essen geben.",
   allergyFootnote:
-    "Wenn ihr eine Lieblingsflasche oder einen geliebten Familien-Snack habt — bringt ihn mit. Keine Pflicht, immer willkommen.",
+    "Wenn ihr eine Lieblingsflasche oder einen geliebten Familien-Snack habt, bringt ihn mit. Keine Pflicht, immer willkommen.",
 };
 
 const rsvpProps = {
@@ -248,22 +239,15 @@ const rsvpProps = {
   headlineSuffix: ".",
   intro: (
     <>
-      Versprochen, das ist das einzige Formular, das ihr ausfüllen müsst.
-      Antworten bitte bis zum <strong>3. Oktober</strong> — damit ich den Tisch
-      und die Playlist planen kann.
+      Nur eine Bitte: Verratet mir euren Lieblingssong für die Playlist, damit
+      der Abend nach uns klingt. Antworten bitte bis zum{" "}
+      <strong>6. Juni</strong>.
     </>
   ),
-  directLine: {
-    label: "Direkter Draht",
-    lines: [
-      <>Schreibt Quyen · +1 347 555 0184</>,
-      <>quyen@thereunion.club</>,
-    ],
-  },
   thanksHeadlineLead: "Ich wusste es.",
   thanksHeadlineAccent: "Ich freu mich so.",
   thanksMessage:
-    "Ein paar Tage vorher bekommst du noch eine kleine Nachricht von mir. Bis dahin — überlegt euch eure Geschichte.",
+    "Ein paar Tage vorher bekommst du noch eine kleine Nachricht von mir. Bis dahin: überlegt euch eure Geschichte.",
   submitLabel: "Antwort senden",
   editLabel: "Antwort bearbeiten",
 };
@@ -273,24 +257,11 @@ const galleryProps = {
   headlineLead: "Die Sonntagmorgen-",
   headlineAccent: "Galerie",
   lede:
-    "Dieser Raum füllt sich mit den Fotos, die wir gemacht haben. Schaut am Morgen danach wieder vorbei — und ladet euch alles herunter, was ihr für immer behalten möchtet.",
-  items: [
-    { alt: "Das Ankommen", placeholder: "Das Ankommen", size: "tall" as const },
-    { alt: "Der Tisch", placeholder: "Der Tisch" },
-    { alt: "Der Toast", placeholder: "Der Toast" },
-    {
-      alt: "Die ganze Gruppe, endlich",
-      placeholder: "Die ganze Gruppe, endlich",
-      size: "wide" as const,
-    },
-    { alt: "Mitten im Lachen", placeholder: "Mitten im Lachen" },
-    { alt: "Die Kerzen", placeholder: "Die Kerzen" },
-    { alt: "Die Tanzfläche", placeholder: "Die Tanzfläche" },
-    { alt: "Das allerletzte", placeholder: "Das allerletzte" },
-  ],
+    "Dieser Raum füllt sich mit den Fotos, die wir gemacht haben. Schaut am Morgen danach wieder vorbei, und ladet euch alles herunter, was ihr für immer behalten möchtet.",
+  items: [],
   locked: {
-    message: "Die vollständige Galerie wird am 18. Oktober um 12 Uhr freigeschaltet.",
-    ctaLabel: "Alle Fotos herunterladen",
+    message:
+      "Die Fotos werden am Tag nach unserem Abend hochgeladen — schaut am Sonntag, 21. Juni, wieder vorbei.",
   },
 };
 

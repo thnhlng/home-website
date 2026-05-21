@@ -14,7 +14,7 @@ type GalleryItem = {
 
 type LockedNotice = {
   message: string;
-  ctaLabel: string;
+  ctaLabel?: string;
 };
 
 type Props = {
@@ -52,41 +52,45 @@ export function Gallery({
           />
         </Reveal>
 
-        <Reveal delay={120}>
-          <div className={styles.grid}>
-            {items.map((item, i) => {
-              const sized = sizeClass(item.size);
-              const className = sized
-                ? `${styles.item} ${sized}`
-                : styles.item;
-              return (
-                <figure key={i} className={className}>
-                  {item.src ? (
-                    <Image
-                      src={item.src}
-                      alt={item.alt}
-                      fill
-                      sizes="(min-width: 768px) 25vw, 50vw"
-                      className={styles.itemImg}
-                    />
-                  ) : (
-                    <span className={styles.placeholder} aria-hidden="true">
-                      {item.placeholder ?? item.alt}
-                    </span>
-                  )}
-                </figure>
-              );
-            })}
-          </div>
-        </Reveal>
+        {items.length > 0 && (
+          <Reveal delay={120}>
+            <div className={styles.grid}>
+              {items.map((item, i) => {
+                const sized = sizeClass(item.size);
+                const className = sized
+                  ? `${styles.item} ${sized}`
+                  : styles.item;
+                return (
+                  <figure key={i} className={className}>
+                    {item.src ? (
+                      <Image
+                        src={item.src}
+                        alt={item.alt}
+                        fill
+                        sizes="(min-width: 768px) 25vw, 50vw"
+                        className={styles.itemImg}
+                      />
+                    ) : (
+                      <span className={styles.placeholder} aria-hidden="true">
+                        {item.placeholder ?? item.alt}
+                      </span>
+                    )}
+                  </figure>
+                );
+              })}
+            </div>
+          </Reveal>
+        )}
 
         {locked && (
           <Reveal delay={200}>
             <aside className={styles.locked}>
               <p className={styles.lockedText}>{locked.message}</p>
-              <button type="button" className={styles.lockedCta} disabled>
-                {locked.ctaLabel}
-              </button>
+              {locked.ctaLabel && (
+                <button type="button" className={styles.lockedCta} disabled>
+                  {locked.ctaLabel}
+                </button>
+              )}
             </aside>
           </Reveal>
         )}

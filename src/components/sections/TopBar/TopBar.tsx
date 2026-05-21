@@ -106,7 +106,7 @@ export function TopBar({ mark, links }: Props) {
       <button
         type="button"
         className={styles.menuToggle}
-        aria-label={menuOpen ? "Menü schließen" : "Menü öffnen"}
+        aria-label={menuOpen ? "Menü schliessen" : "Menü öffnen"}
         aria-expanded={menuOpen}
         aria-controls="topbar-drawer"
         onClick={() => setMenuOpen((v) => !v)}

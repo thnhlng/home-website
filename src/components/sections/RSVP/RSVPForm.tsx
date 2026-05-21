@@ -1,30 +1,13 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import { useForm, useWatch } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Fleuron } from "@/components/ui/Fleuron";
 import { submitRsvp } from "@/lib/actions/rsvp";
-import {
-  rsvpSchema,
-  PROTEIN_VALUES,
-  type RsvpInput,
-} from "@/lib/actions/rsvpSchema";
+import { rsvpSchema, type RsvpInput } from "@/lib/actions/rsvpSchema";
 
-type ProteinValue = (typeof PROTEIN_VALUES)[number];
 import styles from "./RSVP.module.scss";
-
-type ProteinOption = {
-  value: ProteinValue;
-  label: string;
-};
-
-const PROTEIN_OPTIONS: ProteinOption[] = [
-  { value: "pork", label: "Schwein" },
-  { value: "beef", label: "Rind" },
-  { value: "chicken", label: "Hähnchen" },
-  { value: "shrimp", label: "Garnele" },
-];
 
 type Props = {
   thanksHeadlineLead: string;
@@ -44,13 +27,11 @@ export function RSVPForm({
   const {
     register,
     handleSubmit,
-    control,
     reset,
     formState: { errors },
   } = useForm<RsvpInput>({
     resolver: zodResolver(rsvpSchema),
     defaultValues: {
-      proteins: [],
       song: "",
     },
   });
@@ -58,8 +39,6 @@ export function RSVPForm({
   const [submitted, setSubmitted] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
-
-  const proteins = useWatch({ control, name: "proteins" }) ?? [];
 
   const onSubmit = handleSubmit((data) => {
     setFormError(null);
@@ -69,7 +48,7 @@ export function RSVPForm({
         setSubmitted(true);
       } else {
         setFormError(
-          result.formError ?? "Etwas ist schiefgelaufen — versuch es gleich noch einmal.",
+          result.formError ?? "Etwas ist schiefgelaufen. Versuch es gleich noch einmal.",
         );
       }
     });
@@ -102,37 +81,6 @@ export function RSVPForm({
 
   return (
     <form className={styles.form} onSubmit={onSubmit} noValidate>
-      <fieldset className={styles.field}>
-        <legend className={styles.label}>
-          Was möchtest du essen{" "}
-          <span className={styles.labelHint}>(mehrere möglich)</span>
-        </legend>
-        <div className={styles.chipsRow}>
-          {PROTEIN_OPTIONS.map((opt) => {
-            const active = proteins.includes(opt.value);
-            return (
-              <label
-                key={opt.value}
-                className={
-                  active ? `${styles.chip} ${styles.chipActive}` : styles.chip
-                }
-              >
-                <input
-                  type="checkbox"
-                  value={opt.value}
-                  className={styles.chipInput}
-                  {...register("proteins")}
-                />
-                {opt.label}
-              </label>
-            );
-          })}
-        </div>
-        {errors.proteins && (
-          <p className={styles.fieldError}>{errors.proteins.message}</p>
-        )}
-      </fieldset>
-
       <div className={styles.field}>
         <label className={styles.label} htmlFor="rsvp-song">
           Ein Song für die Playlist

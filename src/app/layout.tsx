@@ -21,7 +21,7 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: "Fürobebier-Girls · 2026",
   description:
-    "Ein intimes Beisammensein — sechs Frauen, unzählige Erinnerungen, ein unvergesslicher Abend.",
+    "Ein intimes Beisammensein: sechs Frauen, unzählige Erinnerungen, ein unvergesslicher Abend.",
 };
 
 export default function RootLayout({
