@@ -9,7 +9,7 @@ import { Gallery } from "@/components/sections/Gallery";
 import { Footer, HeartDot } from "@/components/sections/Footer";
 
 const topBarProps = {
-  mark: "Mädels-Treffen · 2026",
+  mark: "Fürobebier-Girls · 2026",
   links: [
     { label: "Einladung", href: "#invitation" },
     { label: "Details", href: "#details" },
@@ -32,7 +32,7 @@ const footerProps = {
   message:
     "Diese Seite ist eine stille kleine Ecke des Internets, nur für uns. Teilt den Link nicht — und bringt am Siebzehnten euer sanftestes Selbst mit.",
   meta: [
-    "Mädels-Treffen · MMXXVI",
+    "Fürobebier-Girls · MMXXVI",
     <>
       Mit <HeartDot /> und Liebe gemacht, von eurer Gastgeberin
     </>,
@@ -41,15 +41,15 @@ const footerProps = {
 };
 
 const heroProps = {
-  eyebrow: "Ein intimes Beisammensein · 17. Oktober 2026",
-  headlineLead: "Mädels",
-  headlineAccent: "Treffen",
+  eyebrow: "Ein intimes Beisammensein · 20. Juni 2026",
+  headlineLead: "Fürobebier",
+  headlineAccent: "Girls",
   headlineSuffix: "zwanzig · sechsundzwanzig",
   subtitle:
     "Sechs Frauen, unzählige Erinnerungen, ein unvergesslicher Abend — endlich wieder vereint, unter einem warmen Dach.",
-  eventDate: "2026-10-17T19:00:00",
+  eventDate: "2026-06-20T19:00:00",
   meta: [
-    { label: "Samstag", value: "17 · Oktober · 2026" },
+    { label: "Samstag", value: "20 · Juni · 2026" },
     { label: "Ab", value: "19 Uhr abends" },
     { label: "Bei", value: "Quyen zu Hause, Brooklyn" },
   ],
@@ -58,6 +58,10 @@ const heroProps = {
 };
 
 const invitationProps = {
+  photo: {
+    src: "/assets/photo.jpg",
+    alt: "Gruppenfoto der sechs Freundinnen",
+  },
   frameTag: "verbunden seit Schulzeiten",
   eyebrow: "Ein Brief von der Gastgeberin",
   headlineLead: "Meine liebsten",
@@ -81,7 +85,7 @@ const detailsProps = {
       label: "Datum & Uhrzeit",
       primary: (
         <>
-          Samstag, <em>17. Oktober</em>
+          Samstag, <em>20. Juni</em>
           <br />
           19:00 Uhr — bis spät
         </>
@@ -126,25 +130,8 @@ const detailsProps = {
     },
     {
       num: "v.",
-      label: "Kleidung",
-      primary: (
-        <>
-          Gemütlich <em>elegant</em>
-          <br />
-          Weiche Stoffe, warme Töne
-        </>
-      ),
-      sub: "Hausschuhe gibt es an der Tür.",
-    },
-    {
-      num: "vi.",
       label: "Mitbringen",
-      primary: (
-        <>
-          Euch selbst
-          <br />+ eine Erinnerung zum Teilen
-        </>
-      ),
+      primary: <>Euch selbst</>,
       sub: "Optional: ein Snack oder eine Flasche, die ihr liebt.",
     },
   ],
@@ -193,25 +180,18 @@ const menuProps = {
       title: "Zum Auftakt",
       items: [
         {
-          name: "Burrata & geröstete Feigen",
-          desc: "Honig, Thymian, Sauerteig-Crostini.",
-          tag: "V",
-        },
-        {
-          name: "Geräuchertes Rote-Bete-Carpaccio",
-          desc: "Walnuss, Orangenschale, weicher Ziegenkäse.",
-          tag: "V · GF",
-        },
-        {
-          name: "Warme Oliven & Marcona-Mandeln",
-          desc: "Rosmarin, Meersalz, Zitronenschale.",
-          tag: "VG · GF",
+          name: "Vietnamesische Fingerfood",
+          desc: "",
         },
       ],
     },
     {
       title: "Der Hauptgang",
       items: [
+        {
+          name: "Do it yourself Sommerrollen",
+          desc: "",
+        },
         {
           name: "Langsam geschmorte Rinderrippe",
           desc: "Rotwein-Reduktion, weiche Polenta, Gremolata.",

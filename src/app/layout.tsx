@@ -19,7 +19,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Mädels-Treffen · 2026",
+  title: "Fürobebier-Girls · 2026",
   description:
     "Ein intimes Beisammensein — sechs Frauen, unzählige Erinnerungen, ein unvergesslicher Abend.",
 };
@@ -41,9 +41,9 @@ export default function RootLayout({
           addressLine="An meine liebsten sechs"
           letterPreview={
             <>
-              Mädels-Treffen
+              Fürobebier-Girls
               <br />
-              <em>17 · Oktober · 2026</em>
+              <em>20 · Juni · 2026</em>
             </>
           }
           openLabel="Einladung öffnen"

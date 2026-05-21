@@ -214,15 +214,26 @@
 }
 
 .heroCta {
-  display: inline-flex;
+  display: flex;
+  flex-direction: column;
   gap: 16px;
-  flex-wrap: wrap;
-  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  max-width: 320px;
+
+  @media (min-width: v.$breakpoint-md) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+    max-width: none;
+  }
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   padding: 16px 32px;
   font-family: v.$font-caps;
