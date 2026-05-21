@@ -181,7 +181,7 @@ const menuProps = {
       items: [
         {
           name: "Vietnamesische Fingerfood",
-          desc: "",
+          desc: "Knusprige Frühlingsrollen und weitere kleine vietnamesische Klassiker zum Ankommen.",
         },
       ],
     },
@@ -190,22 +190,7 @@ const menuProps = {
       items: [
         {
           name: "Do it yourself Sommerrollen",
-          desc: "",
-        },
-        {
-          name: "Langsam geschmorte Rinderrippe",
-          desc: "Rotwein-Reduktion, weiche Polenta, Gremolata.",
-          tag: "GF",
-        },
-        {
-          name: "Safran-Zitronen-Risotto",
-          desc: "Parmigiano, angekohlter Lauch, braune Butter.",
-          tag: "V · GF",
-        },
-        {
-          name: "Geröstete alte Karottensorten",
-          desc: "Tahini, Dukkah, Granatapfel.",
-          tag: "VG · GF",
+          desc: "Reispapier, frische Kräuter, knackiges Gemüse. Jede rollt sich ihre eigene.",
         },
       ],
     },
