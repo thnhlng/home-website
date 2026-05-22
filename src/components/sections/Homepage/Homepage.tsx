@@ -25,7 +25,7 @@ const footerProps = {
   pill: "Eine private Seite · nur für uns sechs",
   headline: (
     <>
-      Ich freue mich auf EUCH
+      Ich freue mich auf EUCH!
       <br />
     </>
   ),
