@@ -30,12 +30,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de" className={`${cormorant.variable} ${manrope.variable}`}>
+    <html
+      lang="de"
+      className={`${cormorant.variable} ${manrope.variable}`}
+    >
       <body>
         {children}
         <EnvelopeIntroGate
           monogram="Q"
-          addressLine="An meine friends"
+          addressLine="An meine liebsten fünf"
           letterPreview={
             <>
               Fürobebier-Girls

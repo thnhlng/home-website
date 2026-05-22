@@ -25,8 +25,9 @@ const footerProps = {
   pill: "Eine private Seite · nur für uns sechs",
   headline: (
     <>
-      Ich freue mich auf EUCH
+      Danke, dass ihr die Menschen seid,
       <br />
+      die ich jedes Mal wieder wählen würde, <em>immer und immer.</em>
     </>
   ),
   message:
@@ -36,21 +37,22 @@ const footerProps = {
     <>
       Mit <HeartDot /> und Liebe gemacht, von eurer Gastgeberin
     </>,
+    "quyen@thereunion.club",
   ],
 };
 
 const heroProps = {
-  eyebrow: "Ein Wiedersehen · 20. Juni 2026",
+  eyebrow: "Ein intimes Beisammensein · 20. Juni 2026",
   headlineLead: "Fürobebier",
   headlineAccent: "Girls",
   headlineSuffix: "zwanzig · sechsundzwanzig",
   subtitle:
-    "Wir finden den Weg aus einem spannenden Escape Room und füllen uns den Bauch mit vietnamesischen Köstlichkeiten bei mir zu Hause.",
-  eventDate: "2026-06-20T16:00:00",
+    "Sechs Frauen, unzählige Erinnerungen, ein unvergesslicher Abend. Endlich wieder vereint, unter einem warmen Dach.",
+  eventDate: "2026-06-20T19:00:00",
   meta: [
     { label: "Samstag", value: "20 · Juni · 2026" },
-    { label: "Ab", value: "16:00 Uhr" },
-    { label: "Bei", value: "Bei Thanh Long und Quyen" },
+    { label: "Ab", value: "19 Uhr abends" },
+    { label: "Bei", value: "Quyen zu Hause, Lenzburg" },
   ],
   primaryCta: { label: "Jetzt antworten", href: "#rsvp" },
   secondaryCta: { label: "Details ansehen", href: "#details" },
@@ -64,14 +66,14 @@ const invitationProps = {
   frameTag: "verbunden seit Schulzeiten",
   eyebrow: "Ein Brief von der Gastgeberin",
   headlineLead: "Meine liebsten",
-  headlineAccent: "Freunde",
+  headlineAccent: "sechs",
   paragraphs: [
     "Es ist viel zu lange her, dass wir alle im selben Raum waren: zu laut lachend, einander die Sätze beendend und uns weigernd, die Küche zu verlassen.",
     "Also räume ich meinen Kalender frei, zünde jede Kerze an, die ich besitze, und öffne mein Zuhause für die Frauen, die für mich Familie sind, solange ich denken kann. Kein Plan. Keine Förmlichkeiten. Nur wir, ein langer Tisch und die Art von Gesprächen, bei denen man die Zeit vergisst.",
     "Kommt hungrig. Kommt früh. Bringt die Geschichten mit.",
   ],
   signature: "Quyen",
-  signatureRole: "Eure Gastgeberin, Freundin & Escaper",
+  signatureRole: "Eure Gastgeberin, Freundin & Mitverschwörerin",
 };
 
 const detailsProps = {
@@ -86,16 +88,16 @@ const detailsProps = {
         <>
           Samstag, <em>20. Juni</em>
           <br />
-          16:00 Uhr, bis spät
+          19:00 Uhr, bis spät
         </>
       ),
-      sub: "16:30 Uhr fängt der Escape Room an.",
+      sub: "Essen pünktlich um 20 Uhr. Bitte kommt nicht zu früh.",
     },
     {
       num: "ii.",
       label: "Mitbringen",
-      primary: <>Euch selbst</>,
-      sub: "und gute Laune.",
+      primary: <>Gute Laune und euch selbst</>,
+      sub: "Optional: ein Snack oder eine Flasche, die ihr liebt.",
     },
     {
       num: "iii.",
@@ -116,7 +118,13 @@ const detailsProps = {
     {
       num: "iv.",
       label: "Parken",
-      primary: <>Kostenlos auf der Strasse</>,
+      primary: (
+        <>
+          Kostenlos auf der Strasse
+          <br />
+          ab 19 Uhr
+        </>
+      ),
       sub: "Hier könnt ihr parkieren.",
       mapKey: "parking",
       wide: true,
@@ -136,25 +144,30 @@ const scheduleProps = {
   headlineAccent: "locker befolgt",
   items: [
     {
-      time: "16:00",
-      title: "Eintreffen",
-      note: "",
+      time: "19:00",
+      title: "Begrüssungsdrinks",
+      note: "Sekt, Granatapfel-Spritz, etwas Warmes, falls es kalt ist.",
       highlight: true,
     },
     {
-      time: "16:15",
-      title: "Escape Room",
-      note: "",
+      time: "20:00",
+      title: "Essen am langen Tisch",
+      note: "Langsam, bei Kerzenschein, keine Handys, ausser sie spielen Musik.",
     },
     {
-      time: "18:00",
-      title: "Apéro und Plaudern",
-      note: "",
+      time: "21:30",
+      title: "Erinnerungsmoment",
+      note: "Eine Geschichte pro Person. Wählt die, die wir euch nie vergessen lassen würden.",
     },
     {
-      time: "18:45",
-      title: "Essen, chillen bis spät",
-      note: "",
+      time: "22:30",
+      title: "Das berüchtigte Quiz",
+      note: "Wie gut kennt ihr uns wirklich? Macht euch auf was gefasst.",
+    },
+    {
+      time: "23:30",
+      title: "Musik, Fotos & Gespräche bis spät",
+      note: "Tanzfläche optional. Geflüsterte Geständnisse erwünscht.",
     },
   ],
 };
@@ -195,16 +208,20 @@ const menuProps = {
       title: "Zum Ausschenken",
       items: [
         {
-          name: "Softgetränke",
-          desc: "Cola, Cola Zero, Migros Eistee etc.",
+          name: "Champagner zum Empfang",
+          desc: "Blanc de Blancs, eiskalt.",
         },
         {
-          name: "Lenzi Hahnenburger",
-          desc: "Qualitätives Wasser aus Lenzburg",
+          name: "Rot: Sangiovese, Toskana",
+          desc: "Erdig, unkompliziert, wie gemacht für die Rinderrippe.",
         },
         {
-          name: "Litchi Spritz",
-          desc: "Optional: mit Schuss",
+          name: "Weiss: Albariño, Rías Baixas",
+          desc: "Frisch, salzig, wie gemacht fürs Risotto.",
+        },
+        {
+          name: "Alkoholfrei",
+          desc: "Granatapfel-Spritz, Ingwer-Honig-Fizz, Kräuteraufgüsse.",
         },
       ],
     },
@@ -239,7 +256,8 @@ const galleryProps = {
   eyebrow: "Nach der Nacht",
   headlineLead: "Die Sonntagmorgen-",
   headlineAccent: "Galerie",
-  lede: "Dieser Raum füllt sich mit den Fotos, die wir gemacht haben. Schaut am Morgen danach wieder vorbei, und ladet euch alles herunter, was ihr für immer behalten möchtet.",
+  lede:
+    "Dieser Raum füllt sich mit den Fotos, die wir gemacht haben. Schaut am Morgen danach wieder vorbei, und ladet euch alles herunter, was ihr für immer behalten möchtet.",
   items: [],
   locked: {
     message:
