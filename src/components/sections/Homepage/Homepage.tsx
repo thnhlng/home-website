@@ -217,8 +217,8 @@ const menuProps = {
 
 const rsvpProps = {
   eyebrow: "Bitte antworten",
-  headlineLead: "Sag mir, dass du",
-  headlineAccent: "kommst",
+  headlineLead: "Sag mir deinen",
+  headlineAccent: "Lieblingssong",
   headlineSuffix: ".",
   intro: (
     <>
