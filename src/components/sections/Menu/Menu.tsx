@@ -18,8 +18,6 @@ type Props = {
   headlineLead: string;
   headlineAccent: string;
   columns: MenuColumn[];
-  allergyNote: string;
-  allergyFootnote?: string;
 };
 
 export function Menu({
@@ -27,8 +25,6 @@ export function Menu({
   headlineLead,
   headlineAccent,
   columns,
-  allergyNote,
-  allergyFootnote,
 }: Props) {
   return (
     <section className={styles.section} id="menu">
@@ -63,14 +59,6 @@ export function Menu({
           </div>
         </Reveal>
 
-        <Reveal delay={200}>
-          <aside className={styles.allergy}>
-            <p className={styles.allergyText}>{allergyNote}</p>
-            {allergyFootnote && (
-              <p className={styles.allergyFootnote}>{allergyFootnote}</p>
-            )}
-          </aside>
-        </Reveal>
       </div>
     </section>
   );

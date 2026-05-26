@@ -210,10 +210,6 @@ const menuProps = {
       ],
     },
   ],
-  allergyNote:
-    "Ein Hinweis zu Allergien: schreibt es mir in eurer Antwort, und ich kümmere mich leise darum. Es wird immer etwas Wunderbares für euch zu essen geben.",
-  allergyFootnote:
-    "Wenn ihr eine Lieblingsflasche oder einen geliebten Familien-Snack habt, bringt ihn mit. Keine Pflicht, immer willkommen.",
 };
 
 const rsvpProps = {
