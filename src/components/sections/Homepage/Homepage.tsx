@@ -66,9 +66,9 @@ const invitationProps = {
   headlineLead: "Meine liebsten",
   headlineAccent: "Freunde",
   paragraphs: [
-    "Es ist viel zu lange her, dass wir alle im selben Raum waren: zu laut lachend, einander die Sätze beendend und uns weigernd, die Küche zu verlassen.",
-    "Also räume ich meinen Kalender frei, zünde jede Kerze an, die ich besitze, und öffne mein Zuhause für die Frauen, die für mich Familie sind, solange ich denken kann. Kein Plan. Keine Förmlichkeiten. Nur wir, ein langer Tisch und die Art von Gesprächen, bei denen man die Zeit vergisst.",
-    "Kommt hungrig. Kommt früh. Bringt die Geschichten mit.",
+    "Seit unserer Zeit an der Kanti Sursee, begleitet uns eine besondere Freundschaft voller Lebensfreude, gemeinsamer Erinnerungen und schöner Momente. Umso mehr freue ich mich heute, euch als Gastgeberin willkommen zu heissen und wieder Zeit miteinander zu verbringen.",
+    "Besonders freue ich mich auch, einen Teil meiner vietnamesischen Kultur durch das Essen mit euch zu teilen und gemeinsam zu geniessen.",
+    "Danke, dass ihr da seid. Auf viele weitere unvergessliche Augenblicke zusammen.",
   ],
   signature: "Quyen",
   signatureRole: "Eure Gastgeberin, Freundin & Escaper",
