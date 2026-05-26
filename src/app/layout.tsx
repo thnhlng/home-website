@@ -19,32 +19,9 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://quyen.chillwithtlq.ch"),
   title: "Fürobebier-Girls · 2026",
   description:
     "Ein intimes Beisammensein: sechs Frauen, unzählige Erinnerungen, ein unvergesslicher Abend.",
-  openGraph: {
-    title: "Fürobebier-Girls · 2026",
-    description: "Ein Wiedersehen · 20. JUNI 2026",
-    url: "https://quyen.chillwithtlq.ch",
-    siteName: "Fürobebier-Girls",
-    locale: "de_DE",
-    type: "website",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 848,
-        height: 506,
-        alt: "Einladung zu den Fürobebier-Girls 2026",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Fürobebier-Girls · 2026",
-    description: "Fürobebier-Girls · 2026",
-    images: ["/og-image.png"],
-  },
 };
 
 export default function RootLayout({
