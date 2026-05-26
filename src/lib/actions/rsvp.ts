@@ -1,6 +1,7 @@
 "use server";
 
 import { rsvpSchema, type RsvpInput } from "./rsvpSchema";
+import { supabase } from "@/lib/supabase";
 
 export type RsvpResult =
   | { ok: true }
@@ -24,8 +25,14 @@ export async function submitRsvp(input: RsvpInput): Promise<RsvpResult> {
     return { ok: false, fieldErrors };
   }
 
-  // No persistence yet — log the reply for now. Hook up a backend when ready.
-  console.log("[rsvp]", parsed.data);
+  const { error } = await supabase
+    .from("song_submissions")
+    .insert({ song: parsed.data.song ?? "" });
+
+  if (error) {
+    console.error("[rsvp] supabase error", error.message);
+    return { ok: false, formError: "Etwas ist schiefgelaufen. Versuch es gleich noch einmal." };
+  }
 
   return { ok: true };
 }
