@@ -227,11 +227,10 @@ const rsvpProps = {
       <strong>6. Juni</strong>.
     </>
   ),
-  thanksHeadlineLead: "Ich wusste es.",
-  thanksHeadlineAccent: "Ich freu mich so.",
-  thanksMessage:
-    "Ein paar Tage vorher bekommst du noch eine kleine Nachricht von mir. Bis dahin: überlegt euch eure Geschichte.",
-  submitLabel: "Antwort senden",
+  thanksHeadlineLead: "Yes! Dein Song",
+  thanksHeadlineAccent: "ist auf der Liste.",
+  thanksMessage: "Dein Song ist gesichert. Wir sehen uns am 20. Juni!",
+  submitLabel: "Song einreichen",
   editLabel: "Antwort bearbeiten",
 };
 
