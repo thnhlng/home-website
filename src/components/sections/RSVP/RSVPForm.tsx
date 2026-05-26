@@ -13,7 +13,7 @@ type Props = {
   thanksHeadlineLead: string;
   thanksHeadlineAccent: string;
   thanksMessage: string;
-  editLabel: string;
+  addAnotherLabel: string;
   submitLabel: string;
 };
 
@@ -21,7 +21,7 @@ export function RSVPForm({
   thanksHeadlineLead,
   thanksHeadlineAccent,
   thanksMessage,
-  editLabel,
+  addAnotherLabel,
   submitLabel,
 }: Props) {
   const {
@@ -69,10 +69,10 @@ export function RSVPForm({
             className={`${styles.btn} ${styles.btnGhost}`}
             onClick={() => {
               setSubmitted(false);
-              reset(undefined, { keepValues: true });
+              reset({ song: "" });
             }}
           >
-            {editLabel} <span className={styles.arrow}>→</span>
+            {addAnotherLabel} <span className={styles.arrow}>→</span>
           </button>
         </div>
       </div>

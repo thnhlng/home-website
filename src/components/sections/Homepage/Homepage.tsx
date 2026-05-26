@@ -8,6 +8,7 @@ import { RSVP } from "@/components/sections/RSVP";
 import { Gallery } from "@/components/sections/Gallery";
 import { Footer, HeartDot } from "@/components/sections/Footer";
 import groupPhoto from "@/assets/groupphoto.jpeg";
+import { fetchSongSubmissions } from "@/lib/actions/rsvp";
 
 const topBarProps = {
   mark: "Fürobebier-Girls · 2026",
@@ -231,7 +232,7 @@ const rsvpProps = {
   thanksHeadlineAccent: "ist auf der Liste.",
   thanksMessage: "Dein Song ist gesichert. Wir sehen uns am 20. Juni!",
   submitLabel: "Song einreichen",
-  editLabel: "Antwort bearbeiten",
+  addAnotherLabel: "Weiteren Song hinzufügen",
 };
 
 const galleryProps = {
@@ -246,7 +247,9 @@ const galleryProps = {
   },
 };
 
-export function Homepage() {
+export async function Homepage() {
+  const songs = await fetchSongSubmissions();
+
   return (
     <>
       <TopBar {...topBarProps} />
@@ -256,7 +259,15 @@ export function Homepage() {
         <Details {...detailsProps} />
         <Schedule {...scheduleProps} />
         <Menu {...menuProps} />
-        <RSVP {...rsvpProps} />
+        <RSVP
+          {...rsvpProps}
+          playlist={{
+            eyebrow: "Die Playlist",
+            headline: "Unser gemeinsamer Soundtrack",
+            emptyMessage: "Noch keine Songs — sei die Erste.",
+            songs,
+          }}
+        />
         <Gallery {...galleryProps} />
       </main>
       <Footer {...footerProps} />

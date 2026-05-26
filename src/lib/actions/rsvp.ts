@@ -1,5 +1,6 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
 import { rsvpSchema, type RsvpInput } from "./rsvpSchema";
 import { supabase } from "@/lib/supabase";
 
@@ -34,5 +35,27 @@ export async function submitRsvp(input: RsvpInput): Promise<RsvpResult> {
     return { ok: false, formError: "Etwas ist schiefgelaufen. Versuch es gleich noch einmal." };
   }
 
+  revalidatePath("/");
   return { ok: true };
+}
+
+export type SongSubmission = { id: string; song: string };
+
+export async function fetchSongSubmissions(): Promise<SongSubmission[]> {
+  const { data, error } = await supabase
+    .from("song_submissions")
+    .select("id, song")
+    .order("id", { ascending: true });
+
+  if (error) {
+    console.error("[rsvp] fetch songs error", error.message);
+    return [];
+  }
+
+  return (data ?? [])
+    .map((row) => ({
+      id: String(row.id),
+      song: typeof row.song === "string" ? row.song.trim() : "",
+    }))
+    .filter((row) => row.song.length > 0);
 }

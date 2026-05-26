@@ -8,6 +8,18 @@ type DirectLine = {
   lines: ReactNode[];
 };
 
+type PlaylistSong = {
+  id: string;
+  song: string;
+};
+
+type Playlist = {
+  eyebrow: string;
+  headline: string;
+  emptyMessage: string;
+  songs: PlaylistSong[];
+};
+
 type Props = {
   eyebrow: string;
   headlineLead: string;
@@ -19,7 +31,8 @@ type Props = {
   thanksHeadlineAccent: string;
   thanksMessage: string;
   submitLabel: string;
-  editLabel: string;
+  addAnotherLabel: string;
+  playlist?: Playlist;
 };
 
 export function RSVP({
@@ -33,7 +46,8 @@ export function RSVP({
   thanksHeadlineAccent,
   thanksMessage,
   submitLabel,
-  editLabel,
+  addAnotherLabel,
+  playlist,
 }: Props) {
   return (
     <section className={styles.section} id="rsvp">
@@ -67,10 +81,30 @@ export function RSVP({
             thanksHeadlineAccent={thanksHeadlineAccent}
             thanksMessage={thanksMessage}
             submitLabel={submitLabel}
-            editLabel={editLabel}
+            addAnotherLabel={addAnotherLabel}
           />
         </Reveal>
       </div>
+
+      {playlist && (
+        <Reveal delay={180}>
+          <div className={styles.playlist}>
+            <span className={styles.playlistEyebrow}>{playlist.eyebrow}</span>
+            <h3 className={styles.playlistHeadline}>{playlist.headline}</h3>
+            {playlist.songs.length === 0 ? (
+              <p className={styles.playlistEmpty}>{playlist.emptyMessage}</p>
+            ) : (
+              <ol className={styles.playlistList}>
+                {playlist.songs.map(({ id, song }) => (
+                  <li key={id} className={styles.playlistItem}>
+                    <span className={styles.playlistSong}>{song}</span>
+                  </li>
+                ))}
+              </ol>
+            )}
+          </div>
+        </Reveal>
+      )}
     </section>
   );
 }

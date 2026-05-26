@@ -331,3 +331,90 @@
   line-height: 1.5;
   color: v.$color-ink-soft;
 }
+
+// ---------- Playlist so far ----------
+.playlist {
+  max-width: 1240px;
+  margin: 56px auto 0;
+
+  @media (min-width: v.$breakpoint-md) {
+    margin-top: 88px;
+  }
+}
+
+.playlistEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-family: v.$font-caps;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: v.$color-burgundy;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 28px;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.5;
+  }
+}
+
+.playlistHeadline {
+  margin: 14px 0 0;
+  font-family: v.$font-display;
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(28px, 3vw, 36px);
+  line-height: 1.2;
+  color: v.$color-ink;
+}
+
+.playlistEmpty {
+  margin: 18px 0 0;
+  font-family: v.$font-display;
+  font-style: italic;
+  font-size: 18px;
+  color: v.$color-ink-soft;
+}
+
+.playlistList {
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 0;
+  counter-reset: playlist;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (min-width: v.$breakpoint-md) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 48px;
+  }
+}
+
+.playlistItem {
+  counter-increment: playlist;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 18px;
+  align-items: baseline;
+  padding: 14px 0;
+  border-bottom: 1px solid v.$color-rule;
+
+  &::before {
+    content: counter(playlist, decimal-leading-zero);
+    font-family: v.$font-caps;
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    color: v.$color-burgundy;
+  }
+}
+
+.playlistSong {
+  font-family: v.$font-display;
+  font-size: 18px;
+  line-height: 1.4;
+  color: v.$color-ink;
+}
