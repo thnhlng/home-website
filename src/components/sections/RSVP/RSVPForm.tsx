@@ -83,12 +83,12 @@ export function RSVPForm({
     <form className={styles.form} onSubmit={onSubmit} noValidate>
       <div className={styles.field}>
         <label className={styles.label} htmlFor="rsvp-song">
-          Ein Song für die Playlist
+          Ein Song für unsere Playlist
         </label>
         <input
           id="rsvp-song"
           type="text"
-          placeholder="Der, der dich zu uns zurückbringt."
+          placeholder="Künstler – Song (e.g. ABBA – Dancing Queen)"
           {...register("song")}
         />
         {errors.song && (
