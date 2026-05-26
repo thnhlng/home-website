@@ -224,7 +224,7 @@ const rsvpProps = {
     <>
       Nur eine Bitte: Verratet mir euren Lieblingssong für die Playlist, damit
       der Abend nach uns klingt. Antworten bitte bis zum{" "}
-      <strong>6. Juni</strong>.
+      <strong>19. Juni</strong>.
     </>
   ),
   thanksHeadlineLead: "Yes! Dein Song",
