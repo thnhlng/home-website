@@ -32,6 +32,11 @@ export default function RootLayout({
   return (
     <html lang="de" className={`${cormorant.variable} ${manrope.variable}`}>
       <body>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{if(sessionStorage.getItem('envelope-intro-seen')!=='1'){document.documentElement.classList.add('intro-pending');}}catch(e){}})();`,
+          }}
+        />
         {children}
         <EnvelopeIntroGate
           monogram="Q"

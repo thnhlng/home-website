@@ -11,6 +11,10 @@ html {
   background: v.$color-burgundy-deep;
 }
 
+html.intro-pending {
+  visibility: hidden;
+}
+
 body {
   font-family: v.$font-body;
   background: v.$color-cream;

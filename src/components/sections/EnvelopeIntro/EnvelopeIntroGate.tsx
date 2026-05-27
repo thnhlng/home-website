@@ -2,6 +2,7 @@
 
 import {
   useCallback,
+  useEffect,
   useState,
   useSyncExternalStore,
   type ReactNode,
@@ -29,6 +30,10 @@ export function EnvelopeIntroGate(props: Props) {
     getSeenServerSnapshot,
   );
   const [dismissed, setDismissed] = useState(false);
+
+  useEffect(() => {
+    document.documentElement.classList.remove("intro-pending");
+  }, []);
 
   const handleComplete = useCallback(() => {
     markIntroSeen();
