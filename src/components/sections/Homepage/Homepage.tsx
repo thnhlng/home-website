@@ -95,8 +95,8 @@ const detailsProps = {
     {
       num: "ii.",
       label: "Mitbringen",
-      primary: <>Euch selbst</>,
-      sub: "und gute Laune.",
+      primary: <>Gute Laune</>,
+      sub: "und EUCH selbst.",
     },
     {
       num: "iii.",
@@ -135,21 +135,21 @@ const scheduleProps = {
   eyebrow: "Der Abend",
   headlineLead: "Ein lockerer Plan,",
   headlineAccent: "locker befolgt",
+  date: "2026-06-20",
   items: [
     {
       time: "16:00",
       title: "Eintreffen",
       note: "",
-      highlight: true,
     },
     {
       time: "16:15",
-      title: "Escape Room",
+      title: "Apéro und Plaudern",
       note: "",
     },
     {
       time: "18:00",
-      title: "Apéro und Plaudern",
+      title: "Escape Room",
       note: "",
     },
     {
