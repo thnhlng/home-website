@@ -47,10 +47,10 @@ const heroProps = {
   headlineSuffix: "zwanzig · sechsundzwanzig",
   subtitle:
     "Wir finden den Weg aus einem spannenden Escape Room und füllen uns den Bauch mit vietnamesischen Köstlichkeiten bei mir zu Hause.",
-  eventDate: "2026-06-20T16:00:00",
+  eventDate: "2026-06-20T17:00:00",
   meta: [
     { label: "Samstag", value: "20 · Juni · 2026" },
-    { label: "Ab", value: "16:00 Uhr" },
+    { label: "Ab", value: "17:00 Uhr" },
     { label: "Bei", value: "Bei Thanh Long und Quyen" },
   ],
   primaryCta: { label: "Jetzt antworten", href: "#rsvp" },
