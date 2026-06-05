@@ -138,12 +138,12 @@ const scheduleProps = {
   date: "2026-06-20",
   items: [
     {
-      time: "16:00",
+      time: "17:00",
       title: "Eintreffen",
       note: "",
     },
     {
-      time: "16:15",
+      time: "17:15",
       title: "Apéro und Plaudern",
       note: "",
     },
