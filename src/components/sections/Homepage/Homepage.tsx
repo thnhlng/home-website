@@ -87,10 +87,10 @@ const detailsProps = {
         <>
           Samstag, <em>20. Juni</em>
           <br />
-          16:00 Uhr, bis spät
+          17:00 Uhr, bis spät
         </>
       ),
-      sub: "16:30 Uhr fängt der Escape Room an.",
+      sub: "18:00 Uhr fängt der Escape Room an.",
     },
     {
       num: "ii.",
