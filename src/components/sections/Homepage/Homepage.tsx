@@ -153,7 +153,7 @@ const scheduleProps = {
       note: "",
     },
     {
-      time: "18:45",
+      time: "19:15",
       title: "Essen, chillen bis spät",
       note: "",
     },
