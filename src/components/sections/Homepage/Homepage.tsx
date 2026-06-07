@@ -53,8 +53,6 @@ const heroProps = {
     { label: "Ab", value: "17:00 Uhr" },
     { label: "Bei", value: "Bei Thanh Long und Quyen" },
   ],
-  primaryCta: { label: "Jetzt antworten", href: "#rsvp" },
-  secondaryCta: { label: "Details ansehen", href: "#details" },
 };
 
 const invitationProps = {

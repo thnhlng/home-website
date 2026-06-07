@@ -1,9 +1,6 @@
 import { Fragment } from "react";
-import Link from "next/link";
 import { Countdown } from "./Countdown";
 import styles from "./Hero.module.scss";
-
-type Cta = { label: string; href: string };
 
 type MetaItem = { label: string; value: string };
 
@@ -15,8 +12,6 @@ type Props = {
   subtitle: string;
   eventDate: string;
   meta: MetaItem[];
-  primaryCta: Cta;
-  secondaryCta: Cta;
 };
 
 export function Hero({
@@ -27,8 +22,6 @@ export function Hero({
   subtitle,
   eventDate,
   meta,
-  primaryCta,
-  secondaryCta,
 }: Props) {
   return (
     <section className={styles.hero} id="top">
@@ -53,21 +46,6 @@ export function Hero({
               </div>
             </Fragment>
           ))}
-        </div>
-
-        <div className={styles.heroCta}>
-          <Link
-            href={primaryCta.href}
-            className={`${styles.btn} ${styles.btnPrimary}`}
-          >
-            {primaryCta.label} <span className={styles.arrow}>→</span>
-          </Link>
-          <Link
-            href={secondaryCta.href}
-            className={`${styles.btn} ${styles.btnSecondary}`}
-          >
-            {secondaryCta.label}
-          </Link>
         </div>
       </div>
     </section>
